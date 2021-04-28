@@ -1,0 +1,586 @@
+% -----------------------------------------------------------------------------
+% =========                 |
+% \\      /  F ield         |
+%  \\    /   O peration     | OpenFOAM: The Open Source CFD Toolbox
+%   \\  /    A nd           |
+%    \\/     M anipulation  |
+% -----------------------------------------------------------------------------
+% License
+%     This file is part of OpenFOAM.
+%
+%     OpenFOAM is free software; you can redistribute it and/or modify it
+%     under the terms of the GNU General Public License as published by the
+%     Free Software Foundation; either version 2 of the License, or (at your
+%     option) any later version.
+%
+%     OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+%     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+%     FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+%     for more details.
+%
+%     You should have received a copy of the GNU General Public License
+%     along with OpenFOAM; if not, write to the Free Software Foundation,
+%     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+%
+% LaTeX style file
+%     tensorNotation.sty
+%
+% Description
+%     Style file for typesetting conventional mathematical notation 
+%     for tensors and partial differential equations. Local-instantaneous
+%     and averaged syntax.
+%
+% -----------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tensorNotation}[2011/04/01 \space v. 0.1]
+
+\usepackage{graphicx}
+\newcommand\bcdot{\ensuremath{%
+  \mathchoice%
+   {\mskip\thinmuskip\lower0.2ex\hbox{\scalebox{3}{$\cdot$}}\mskip\thinmuskip}}%
+   {\mskip\thinmuskip\lower0.2ex\hbox{\scalebox{3}{$\cdot$}}\mskip\thinmuskip}%        
+   {\lower0.3ex\hbox{\scalebox{2}{$\cdot$}}}%  
+   {\lower0.3ex\hbox{\scalebox{2}{$\cdot$}}}%
+}
+
+% ---------------------------------
+% common tensor notation
+% ---------------------------------
+
+%\newcommand{\oldvec}[1]{\ensuremath{\vec{#1}}}
+\let\oldvec\vec
+\renewcommand{\vec}[1] {\ensuremath{\mathbf #1}}
+%\newcommand{\gvec}[1] {\ensuremath{\mbox{\boldmath$\bf#1$}}}
+\newcommand{\gvec}[1] {\ensuremath{\boldsymbol #1}}
+
+%   1) general use
+%   ~~~~~~~~~~~~~~
+\newcommand{\at} {\ensuremath{\vec{a}}}
+\newcommand{\bt} {\ensuremath{\vec{b}}}
+\newcommand{\ct} {\ensuremath{\vec{c}}}
+\newcommand{\zerot} {\ensuremath{\vec{0}}}
+\newcommand{\n} {\ensuremath{\vec{n}}}
+\newcommand{\nhat} {{\hat{\n}}} %-HM where is the difference?
+\newcommand{\nHat} {\ensuremath{\hat{\vec{n}}}} 
+
+\newcommand{\gibbsScalar}[1] {\ensuremath{\left(#1\right)}} 
+\newcommand{\gibbsVector}[1] {\ensuremath{\left[#1\right]}} 
+\newcommand{\gibbsTensor}[1] {\ensuremath{\left\{#1\right\}}} 
+
+
+%   2) general continuum mechanics
+%   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\newcommand{\D} {\ensuremath{\vec{d}}}
+\newcommand{\I} {\ensuremath{\vec{I}}}
+\newcommand{\U} {\ensuremath{\vec{U}}}
+\newcommand{\V} {\ensuremath{\vec{V}}}
+
+%\newcommand{\stress} {\ensuremath{\bf{\Pifont{psy}s}}}
+%\newcommand{\strain} {\ensuremath{\bf{\Pifont{psy}e}}}
+\newcommand{\stress} {\ensuremath{\gvec{\sigma}}}
+\newcommand{\strain} {\ensuremath{\gvec{\varepsilon}}}
+\newcommand{\Stress} {\ensuremath{\gvec{\Sigma}}}
+\newcommand{\Rstress}{\ensuremath{\mathbf{R}}}
+
+%   3) turbulence modelling
+%   ~~~~~~~~~~~~~~~~~~~~~~~
+\newcommand{\rflux}[1] {\ensuremath{\corrtwo{\U}{#1}}}
+\newcommand{\rstress} {\ensuremath{\rflux{\U}}}
+
+
+% ---------------------------------
+% common operators
+% ---------------------------------
+
+%   1) products
+%   ~~~~~~~~~~~
+%\newcommand{\anyprod}{\star}
+\newcommand{\anyprod}{{\scriptscriptstyle\circ}}
+\newcommand{\cprod} {\times}
+%\newcommand{\dprod} {\,{\scriptscriptstyle \stackrel{\bullet}{{}}}\,}
+\newcommand{\dprod}{{\scriptscriptstyle\bcdot}} % \bcdot instead of \bullet
+\newcommand{\ddprod} {\,{\scriptscriptstyle \stackrel{\bcdot}{\bcdot}}\,} % \bcdot instead of \bullet
+\newcommand{\tdprod}%
+     {\,{\scriptscriptstyle \stackrel{3}{\bcdot}}\,} % \bcdot instead of \bullet
+%\newcommand{\tprod} {\,{\scriptscriptstyle \stackrel{\otimes}{{}}}\,}
+\newcommand{\tprod} {{\scriptscriptstyle{\otimes}{{}}}}
+
+
+%   2) operations
+%   ~~~~~~~~~~~~~
+
+% tensor operations
+% ~~~~~~~~~~~~~~~~~
+\newcommand{\adj} {\ensuremath{\operatorname{adj}}}
+\newcommand{\cof} {\ensuremath{\operatorname{cof}}}
+\newcommand{\diag} {\ensuremath{\operatorname{diag}}}
+\newcommand{\dev} {\ensuremath{\operatorname{dev}}}
+\newcommand{\Hodge} {\ensuremath{\operatorname{\stackrel{\displaystyle \ast}{}}}}
+\newcommand{\hyd} {\ensuremath{\operatorname{hyd}}}
+\renewcommand{\max} {\ensuremath{\operatorname{max}}}
+\renewcommand{\min} {\ensuremath{\operatorname{min}}}
+\newcommand{\inv} {\ensuremath{\operatorname{inv}}}
+\newcommand{\sym} {\ensuremath{\operatorname{symm}}}    % symm ?
+\newcommand{\skw} {\ensuremath{\operatorname{skew}}}
+\newcommand{\tr} {\ensuremath{\operatorname{tr}}}
+\newcommand{\trans}[1] {\ensuremath{#1^{\operatorname{T}}}}
+
+% index operations
+% ~~~~~~~~~~~~~~~~
+\newcommand{\deltai}[1] {\ensuremath{\partial_{#1}}}
+
+
+%   3) Derivatives & Integrals
+%      ~~~~~~~~~~~~~~~~~~~~~~~
+
+% 
+% ~~~~~~~~~~~~~~~~~~
+\newcommand{\dV} {\ensuremath{\,dV}}
+\newcommand{\dS} {\ensuremath{\,dS}}
+\newcommand{\dt} {\ensuremath{\,dt}}
+
+% Partial derivative
+% ~~~~~~~~~~~~~~~~~~
+\newcommand{\dd}[2] {\ensuremath{\frac{\partial #1}{\partial #2}}}
+\newcommand{\ddd}[2] {\ensuremath{\frac{\partial^2 #1}{\partial {#2}^2}}}
+
+% spatial derivatives
+% ~~~~~~~~~~~~~~~~~~~
+\newcommand{\Nabla} {{\nabla\!\anyprod}}
+%\newcommand{\curl}{\ensuremath{\nabla\cprod}}
+\newcommand{\curl}{\ensuremath{\nabla\!\cprod}}
+
+%\renewcommand{\div} {\ensuremath{\nabla\dprod}}
+\renewcommand{\div} {\ensuremath{\nabla\!\dprod}}
+
+\newcommand{\grad}{\ensuremath{\nabla}}
+\newcommand{\laplacian}{\ensuremath{\nabla^{2}}}
+
+% temporal derivatives
+% ~~~~~~~~~~~~~~~~~~~~
+\newcommand{\ddt}[1] {\ensuremath{\frac{\partial #1}{\partial t }}}
+\newcommand{\dddt}[1] {\ensuremath{\frac{\partial^2 (#1)}{\partial t^2 }}}
+\newcommand{\DDt}[1] {\ensuremath{\frac{D #1}{D t }}}
+\newcommand{\DpDt}[2] {\ensuremath{\frac{D_{#1} #2}{D t }}}
+\newcommand{\dsdts}[1] {\ensuremath{\frac{\partial ^2 #1}{\partial t^2}}}
+\newcommand{\rate}[1] {\ensuremath{\dot{#1}}}
+
+
+% ---------------------------------
+% index notation
+% ---------------------------------
+
+\newcommand{\veci}[2][i] {\ensuremath{#2_{#1}}}
+\newcommand{\teni}[2][ij] {\ensuremath{#2_{#1}}}
+\newcommand{\tenTi}[2][ji] {\ensuremath{#2_{#1}}}
+
+%   1) general use
+%   ~~~~~~~~~~~~~~
+\newcommand{\ai}[1][i] {\ensuremath{\veci[#1]{a}}}
+\newcommand{\bi}[1][i] {\ensuremath{\veci[#1]{b}}}
+\newcommand{\nin}[1][i] {\ensuremath{\veci[#1]{n}}}
+\newcommand{\Kronecker}[2] {\ensuremath{\delta_{#1#2}}}
+\newcommand{\permutation}[3] {e_{#1#2#3}}
+
+%   2) continuum mechanics
+%   ~~~~~~~~~~~~~~~~~~~~~~
+\newcommand{\Ui}[1][i] {\ensuremath{\veci[#1]{U}}}
+\newcommand{\Vi}[1][i] {\ensuremath{\veci[#1]{V}}}
+\newcommand{\stressi}[1][ij] {\ensuremath{\teni[#1]{\sigma}}}
+\newcommand{\straini} {\ensuremath{\teni{\varepsilon}}}
+
+
+% ---------------------------------
+% averaging notation
+% ---------------------------------
+
+%   1) time average symbols
+%      ~~~~~~~~~~~~~~~~~~~~
+\newcommand{\aav}[1] {\ensuremath{\left<{#1}\right>}}
+\newcommand{\corrtwo}[2] {{\dwea{\dprime{#1} \dprime{#2}}}}
+\newcommand{\curly}[1] {{\cal #1}}
+\newcommand{\dprime}[1] {\ensuremath{{#1}^{^{\prime \prime}}}}
+\newcommand{\dweafluc}[1] {\ensuremath{\dprime{#1}}}
+\newcommand{\fluc}[1] {\ensuremath{#1^{\prime}}}
+
+%   2) spatial average symbols
+%      ~~~~~~~~~~~~~~~~~~~~~~~
+
+% general use
+% ~~~~~~~~~~~
+
+  %- phase indication
+\newcommand{\p} {\varphi}
+\newcommand{\pn} {\phi}
+
+  %- generalized quantities
+%\newcommand{\Q}  {\vec{Q}}
+%\renewcommand{\P}  {\vec{P}}
+%\newcommand{\Q}  {\ensuremath{\mathbf{\Phi}}}
+%\renewcommand{\P}  {\ensuremath{\mathbf{\Psi}}}
+\newcommand{\Q}  {\ensuremath{\phi}}
+\renewcommand{\P}  {\ensuremath{\psi}}
+\newcommand{\x} {\ensuremath{\vec{x}}}
+\newcommand{\xt} {\ensuremath{\vec{x},\,t}}
+\newcommand{\xtmu} {\ensuremath{\vec{x},t;\,\mu}}
+
+  %- phase bulk quantities
+\newcommand{\Qp}  {{\Q_\p}}
+\newcommand{\Qpn}  {{\Q_\pn}}
+\newcommand{\Ip} {{I_\p}}
+\newcommand{\Ipn} {{I_\pn}}
+\newcommand{\QIp}  {{\Q_{I,\p}}}
+\newcommand{\QIpn}  {{\Q_{I,\pn}}}
+\newcommand{\ap} {{\alpha_\p}}
+\newcommand{\g} {\gamma} 
+%-HM comment: \g \equiv \ap1
+\newcommand{\apn} {{\alpha_\pn}}
+\newcommand{\np} {{\n_{I,\p\pn}\,}}
+\newcommand{\npn} {{\n_{I,\pn\p}\,}}
+\newcommand{\curvp} {{\kappa_{I,\p\pn}\,}}
+\newcommand{\curvpn} {{\kappa_{I,\pn\p}\,}}
+\newcommand{\Up}  {\U_\p}
+\newcommand{\Upn}  {\U_\pn}
+%\providecommand{#p} {{S_\p}}
+%\providecommand{\Spn} {{S_\pn}}
+\newcommand{\Sp} {{S_\p}}
+\providecommand{\Spn} {{S_\pn}}
+\newcommand{\Dp} {{\curly{D}_\p}}
+\newcommand{\Dpn} {{\curly{D}_\pn}}
+
+  %- phase interface quantities
+\newcommand{\UI} {{\U_I}}
+\newcommand{\Si} {{S_I}}
+\newcommand{\pri} {{p_I}}
+\newcommand{\rhoi}{{\rho_I}}
+\newcommand{\Di} {{\curly{D}_I}}
+
+% averaging operators
+% ~~~~~~~~~~~~~~~~~~~
+\makeatletter
+%\newlength\knuthian@fdfive
+%	\def\mathpal@save#1{\let\was@math@style=#1\relax}
+%	\def\utilde#1{\mathpalette\mathpal@save
+%	              {\setbox124=\hbox{$\was@math@style#1$}%
+%	\setbox125=\hbox{$\fam=3\global\knuthian@fdfive=\fontdimen5\font$}
+%	\setbox125=\hbox{$\widetilde{\vrule height 0pt depth 0pt width \wd124}$}%
+%	               \baselineskip=1pt\relax
+%	               \vtop{\copy125\copy124\vskip +\knuthian@fdfive}}}
+
+%  \let\cc@palette\mathpalette
+%  \newcount\cc@group
+%	\newcommand\undertilde{\cc@palette\cc@undertilde}
+%  \def\ialign{\everycr{}\tabskip\z@skip\halign} % initialized \halign
+%  \def\oalign#1{\leavevmode\vtop{\baselineskip\z@skip \lineskip-3.0ex%
+%    \ialign{##\crcr#1\crcr}}}
+%	\def\cc@undertilde#1#2{%
+%	  \cc@group\the\mathgroup
+%	  \sbox\z@{$\m@th\mathgroup\cc@group#1#2$}%
+%	  \oalign{%oalign
+%	     $\m@th\mathgroup\cc@group#1#2$%
+%	    \crcr
+%	     \hidewidth 
+%	     \vbox to.5ex{%
+%	       \hbox{%
+%	         $\hss
+%	          #1%
+%	          \mathgroup\cc@group
+%	          \widetilde{\hbox to\wd\z@{\hss}}%
+%	          \hss$}%
+%	       \vss}%
+%	     \hidewidth}}
+
+
+%\newfam\msbfam
+% \font\tenmsb=msbm10
+% \font\sevenmsb=msbm7
+% \font\fivemsb=msbm5
+%\textfont\msbfam=\tenmsb
+%\scriptfont\msbfam=\sevenmsb
+%\scriptscriptfont\msbfam=\fivemsb
+%\edef\msbfam@{\hexnumber@\msbfam}
+%
+%	\def\widetilde#1{\setboxz@h{$\m@th#1$}%
+%	 \ifdim\wdz@>\tw@ em\mathaccent"0\msbfam@5D{#1}%
+%	 \else\mathaccent"0365{#1}\fi}
+\makeatother
+
+%by use of accents package
+%\DeclareMathAccent{\wtilde}{\mathord}{largesymbols}{"65}
+
+\newcommand{\av}[1] {\ensuremath{\,\overline{#1}}\,}
+\newcommand{\dwea}[1] {\ensuremath{\widetilde{#1}}}
+%\newcommand{\dwea}[1] {\ensuremath{\wideparen{#1}}}
+
+  %- phase bulk
+\newcommand{\cav}[2] {{\,\overline{#1}^{#2}}}
+%\newcommand{\dwca}[2] {{\widetilde{\mbox{#1}}^{#2}}} %--HM not stable!?
+\newcommand{\dwca}[2] {\ensuremath{{\widetilde{ \mbox{#1} }}^{#2}}} %
+\newcommand{\dwcaNested}[2] {\ensuremath{{\widetilde{ \mbox{#1} }}^{#2}}} %
+%-HM correction: '^' instead of '_'
+
+%- phase interface
+\makeatletter
+%\font\bigtenrm=cmex10 scaled 600
+%\def\downbracefill{$\m@th\textfont3=\bigtenrm
+% \braceld\leaders\vrule\hfill\braceru
+% \bracelu\leaders\vrule\hfill\bracerd$}
+%\def\overbrace#1{\mathop{\vbox{\ialign{##\crcr\noalign{\kern2pt}
+% \downbracefill\crcr\noalign{\kern2pt\nointerlineskip}
+% $\hfil\displaystyle{#1}\hfil$\crcr}}}\limits}
+%--HM: DOES NOT WORK IN ALL DOCUMENTCLASSES
+\DeclareFontFamily{OMX}{MnSymbolE}{}
+\DeclareSymbolFont{myLargesymbols}  {OMX}{MnSymbolE}{m}{n}
+\SetSymbolFont{myLargesymbols}{bold}{OMX}{MnSymbolE}{b}{n}
+\DeclareFontShape{OMX}{MnSymbolE}{m}{n}{
+    <-6>  MnSymbolE5
+   <6-7>  MnSymbolE6
+   <7-8>  MnSymbolE7
+   <8-9>  MnSymbolE8
+   <9-10> MnSymbolE9
+  <10-12> MnSymbolE10
+  <12->   MnSymbolE12}{}
+\DeclareFontShape{OMX}{MnSymbolE}{b}{n}{
+    <-6>  MnSymbolE-Bold5
+   <6-7>  MnSymbolE-Bold6
+   <7-8>  MnSymbolE-Bold7
+   <8-9>  MnSymbolE-Bold8
+   <9-10> MnSymbolE-Bold9
+  <10-12> MnSymbolE-Bold10
+  <12->   MnSymbolE-Bold12}{}
+  
+\DeclareMathSymbol{\downbrace}    {\mathord}{myLargesymbols}{'251}
+\DeclareMathSymbol{\downbraceg}   {\mathord}{myLargesymbols}{'252}
+\DeclareMathSymbol{\downbracegg}  {\mathord}{myLargesymbols}{'253}
+\DeclareMathSymbol{\downbraceggg} {\mathord}{myLargesymbols}{'254}
+\DeclareMathSymbol{\downbracegggg}{\mathord}{myLargesymbols}{'255}
+\DeclareMathSymbol{\upbrace}      {\mathord}{myLargesymbols}{'256}
+\DeclareMathSymbol{\upbraceg}     {\mathord}{myLargesymbols}{'257}
+\DeclareMathSymbol{\upbracegg}    {\mathord}{myLargesymbols}{'260}
+\DeclareMathSymbol{\upbraceggg}   {\mathord}{myLargesymbols}{'261}
+\DeclareMathSymbol{\upbracegggg}  {\mathord}{myLargesymbols}{'262}
+\DeclareMathSymbol{\braceld}      {\mathord}{myLargesymbols}{'263}
+\DeclareMathSymbol{\bracelu}      {\mathord}{myLargesymbols}{'264}
+\DeclareMathSymbol{\bracerd}      {\mathord}{myLargesymbols}{'265}
+\DeclareMathSymbol{\braceru}      {\mathord}{myLargesymbols}{'266}
+\DeclareMathSymbol{\bracemd}      {\mathord}{myLargesymbols}{'267}
+\DeclareMathSymbol{\bracemu}      {\mathord}{myLargesymbols}{'270}
+\DeclareMathSymbol{\bracemid}     {\mathord}{myLargesymbols}{'271}
+
+\def\horiz@expandable#1#2#3#4#5#6#7#8{%
+  \@mathmeasure\z@#7{#8}%
+  \@tempdima=\wd\z@
+  \@mathmeasure\z@#7{#1}%
+  \ifdim\noexpand\wd\z@>\@tempdima
+    $\m@th#7#1$%
+  \else
+    \@mathmeasure\z@#7{#2}%
+    \ifdim\noexpand\wd\z@>\@tempdima
+      $\m@th#7#2$%
+    \else
+      \@mathmeasure\z@#7{#3}%
+      \ifdim\noexpand\wd\z@>\@tempdima
+        $\m@th#7#3$%
+      \else
+        \@mathmeasure\z@#7{#4}%
+        \ifdim\noexpand\wd\z@>\@tempdima
+          $\m@th#7#4$%
+        \else
+          \@mathmeasure\z@#7{#5}%
+          \ifdim\noexpand\wd\z@>\@tempdima
+            $\m@th#7#5$%
+          \else
+           #6#7%
+          \fi
+        \fi
+      \fi
+    \fi
+  \fi}
+
+\def\overbrace@expandable#1#2#3{\vbox{\m@th\ialign{##\crcr
+  #1#2{#3}\crcr\noalign{\kern2\p@\nointerlineskip}%
+  $\m@th\hfil#2#3\hfil$\crcr}}}
+\def\overbrace@#1#2#3{\vbox{\m@th\ialign{##\crcr
+  #1#2\crcr\noalign{\kern2\p@\nointerlineskip}%
+  $\m@th\hfil#2#3\hfil$\crcr}}}
+  
+\def\underbrace@expandable#1#2#3{\vtop{\m@th\ialign{##\crcr
+  $\m@th\hfil#2#3\hfil$\crcr
+  \noalign{\kern2\p@\nointerlineskip}%
+  #1#2{#3}\crcr}}}
+\def\underbrace@#1#2#3{\vtop{\m@th\ialign{##\crcr
+  $\m@th\hfil#2#3\hfil$\crcr
+  \noalign{\kern2\p@\nointerlineskip}%
+  #1#2\crcr}}}
+
+\def\bracefill@#1#2#3#4#5{$\m@th#5#1\leaders\hbox{$#4$}\hfill#2\leaders\hbox{$#4$}\hfill#3$}
+
+\def\downbracefill@{\bracefill@\braceld\bracemd\bracerd\bracemid}
+\DeclareRobustCommand{\downbracefill}{\downbracefill@\textstyle}
+
+\def\upbracefill@{\bracefill@\bracelu\bracemu\braceru\bracemid}
+\DeclareRobustCommand{\upbracefill}{\upbracefill@\textstyle}
+
+\def\upbrace@expandable{%
+  \horiz@expandable
+    \upbrace
+    \upbraceg
+    \upbracegg
+    \upbraceggg
+    \upbracegggg
+    \upbracefill@}
+\def\downbrace@expandable{%
+  \horiz@expandable
+    \downbrace
+    \downbraceg
+    \downbracegg
+    \downbraceggg
+    \downbracegggg
+    \downbracefill@}
+    
+\DeclareRobustCommand{\overbrace}[1]{\mathop{\mathpalette{\overbrace@expandable\downbrace@expandable}{#1}}\limits}
+\DeclareRobustCommand{\underbrace}[1]{\mathop{\mathpalette{\underbrace@expandable\upbrace@expandable}{#1}}\limits}
+\makeatother
+%\newcommand{\sav}[1] {\,{\overbrace{\rule{0pt}{1.15ex}\smash{#1}}}}
+\newcommand{\sav}[1] {\,{\overbrace{\vphantom{\scriptscriptstyle #1}\smash{\textstyle #1}}}}
+\newcommand{\varsav}[2] {\,{\overbrace{\vphantom{\rule{1pt}{#1}}\smash{\scriptstyle #2}}}} %in text
+\newcommand{\csav}[2] {\,{\overbrace{\vphantom{\scriptscriptstyle #1}\smash{\textstyle #1}}}^{#2}}
+\newcommand{\varcsav}[3] {\,{\overbrace{\vphantom{\rule{1pt}{#1}}\smash{\scriptstyle #2}}}^{#3}} %in text
+%\renewcommand{\Sigma}{\ensuremath{\mathlarger\Sigma}}
+
+% averaged quantities
+% ~~~~~~~~~~~~~~~~~~~
+  %- phase bulk
+\newcommand{\Ubar} {\,\ensuremath{\overline{\U}}}
+\newcommand{\Uprime} {\ensuremath{{\U'}}}
+\newcommand{\pBar} {\,\ensuremath{\overline{p}}}
+\newcommand{\pPrime} {\ensuremath{{p'}}}
+  
+  %- phase interface
+\newcommand{\Usavi} {{\sav{\UI}}}
+
+% fluctuations
+% ~~~~~~~~~~~~
+  %- phase bulk
+\newcommand{\cfluc}[2] {{#1^{\prime #2}}}
+\newcommand{\dwcafluc}[2] {\ensuremath{{#1}^{^{\prime \prime #2}}}}
+
+  %- phase interface
+\newcommand{\sfluc}[1] {{{#1}^\sharp}}
+\newcommand{\csfluc}[2] {{{#1}_{#2}^\sharp}}
+
+% expression
+% ~~~~~~~~~~
+
+\newcommand{\surfaceInt}[2]
+{
+    \lim_{\delta V \rightarrow 0}\overline{\frac{1}{\delta V}
+    \int_{#1} #2 \: dS}
+}
+\newcommand{\cSurfaceInt}[3]
+{
+    \lim_{\delta V_{#3} \rightarrow 0}\overline{\frac{1}{\delta V_{#3}}
+    \int_{#1} #2 \: dS}
+}
+
+\newcommand{\ContinuityCond}[2]
+{
+    \ddt{#1 \av{\rho}_#2}
+  + \convect{#1 \av{\rho}_#2 \dwea{\U}_#2}
+= - \sav{\rho_#2 S_#2} \Sigma
+}
+
+
+\newcommand{\MomentumCond}[2]
+{ 
+&   \ddt{#1 \av{\rho}_#2 \dwea{\U}_#2} &
+  + \convect{#1 \av{\rho}_#2 \dwea{\U_#2 \vec{u}_#2}}
+  + \div{\av{\vec{\Stress}}_#2}
+= - \grad{#1 \av{p}_#2} \nonumber \\
+& - \sav{\rho \U S} \Sigma &
+  + \sav{\n_\g . \vec{\Stress}} \Sigma
+  - \div{\av{\mu}\sav{\left(\U\n_\g + \n_\g \U \right)}}
+    \Sigma
+  + \sav{p \n_\g } \Sigma
+}
+
+\newcommand{\StressTensorCond}[2]
+{
+    \av{\vec{\Stress}}_#2
+  = -\av{\mu}_#2 \left( \grad{#1 \av{U}_#2} + \grad{#1 \av{U}_#2}^T \right)
+}
+
+
+\newcommand{\TransportCond}[1]
+{
+    \ddt{\g \av{\rho}\dwea{#1}_\g}
+  + \convect{\g \av{\rho} \dwea{\U_\g #1_\g}}
+= - \sav{\rho S #1} \Sigma
+  + \g \av{\rho} \sav{\dot{#1}}
+}
+
+
+\newcommand{\MomentumCondModel}[2]
+{
+&   \ddt{#1 \av{\rho}_#2 \dwea{\U}_#2}
+  + \convect{#1 \av{\rho}_#2 \dwea{\U}_#2 \dwea{\U}_#2}
+  - \div
+    {
+        \left[
+        \av{\rho}_#2\av{\curly{D}}_#2
+        \left(
+            \grad{\dwea{\U}_#2}
+          + \grad{\dwea{\U}_#2}^T
+          - \frac{2}{3}(\div{\dwea{\U}_#2})\vec{I}
+        \right)
+      + \frac{2}{3}\av{\rho}_#2k\vec{I}
+        \right]
+    }
+&
+=   \nonumber \\
+& - #1\grad{\av{p}_#2}
+  - (\av{p}_#2 - \av{\pri})\grad{#1}
+  - \sav{\rhoi \Si}\sav{\UI} \Sigma
+&
+}
+
+
+% ---------------------------------
+% Miscellaneous
+% ---------------------------------
+
+% Subscript eff for nu_eff etc.
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\newcommand{\eff} {{\scriptscriptstyle e\!f\!\!f\!}}
+\newcommand{\charact} {{\scriptscriptstyle c\!h\!a\!r\!}}
+\newcommand{\const} {{\text{\rm c\,}}}
+
+% A nice e^x
+% ~~~~~~~~~~
+\font\bigtenrm=cmr12 scaled 1200
+\newcommand{\eexp}[1]{{\hbox{$\textfont1=\bigtenrm e$}}^{\raise3pt\hbox{$#1$}}}
+
+% short-hand
+% ~~~~~~~~~~
+% -- Roman letters used in subscripts
+\newcommand{\arm}{\textrm{a}}
+\newcommand{\brm}{\textrm{b}}
+\newcommand{\drm}{\textrm{d}}
+\newcommand{\frm}{\textrm{f}}
+\newcommand{\lrm}{\textrm{l}}
+\newcommand{\rrm}{\textrm{r}}
+
+\newcommand{\Drm}{\textrm{D}}
+\newcommand{\Crm}{\textrm{C}}
+\newcommand{\Trm}{\textrm{T}}
+
+% -- Some symbol for physical quantities
+\newcommand{\diam}{\textrm{d}}
+\newcommand{\eye}{\mathbf{I}}
+\newcommand{\grav}{\mathbf{g}}
+\newcommand{\Hbf}{\mathbf{H}}
+\newcommand{\tke}{\kappa}
+\newcommand{\tdr}{\varepsilon}
+\newcommand{\Sbf}{\mathbf{S}}
+

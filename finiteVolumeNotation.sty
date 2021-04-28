@@ -1,0 +1,208 @@
+% -----------------------------------------------------------------------------
+% =========                 |
+% \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+%  \\    /   O peration     |
+%   \\  /    A nd           | Copyright (C) 1991-2009 OpenCFD Ltd.
+%    \\/     M anipulation  |
+% -----------------------------------------------------------------------------
+% License
+%     This file is part of OpenFOAM.
+%
+%     OpenFOAM is free software; you can redistribute it and/or modify it
+%     under the terms of the GNU General Public License as published by the
+%     Free Software Foundation; either version 2 of the License, or (at your
+%     option) any later version.
+%
+%     OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+%     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+%     FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+%     for more details.
+%
+%     You should have received a copy of the GNU General Public License
+%     along with OpenFOAM; if not, write to the Free Software Foundation,
+%     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+%
+% LaTeX style file
+%     finiteVolume.sty
+%
+% Description
+%     Style file for typesetting finite-volume discretisation.
+%
+% -----------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{finiteVolumeNotation}[2011/04/01 \space v. 0.1]
+
+\let\newcommand\providecommand
+
+%redefine underscore in math mode to get
+%things below to work properly!!
+%\let\sub_
+%\catcode`\_=12
+%\begingroup
+%  \catcode`\_=\active
+%  \gdef_#1{\sub{#1}}
+%\endgroup
+
+% arbitrary general scalar quantity
+\newcommand{\q}  {\ensuremath{\phi}}
+
+% ---------------------------------
+% FVM discretisation
+% ---------------------------------
+\newcommand{\f}{{\scriptscriptstyle\!f}}
+%\newcommand{\b}{{\scriptscriptstyle\!b}}
+\newcommand{\bd}{b}
+\newcommand{\dU} {{\scriptscriptstyle\!\U}}
+\newcommand{\order}[1] {{\cal O}\brackets{#1}}
+
+\newcommand{\xP} {{\vec{x}_P}}
+\newcommand{\xN} {{\vec{x}_N}}
+\newcommand{\xf} {{\vec{x}_\f}}
+
+\newcommand{\Sf} {{\vec{S}_\f}}
+\newcommand{\Sb} {{\vec{S}_\bd}}
+\newcommand{\dist} {{\D}}
+\newcommand{\df} {{\dist_\f}}
+\newcommand{\dPf} {{\dist_{Pf}}}
+\newcommand{\dNf} {{\dist_{Nf}}}
+
+\newcommand{\fGrad} {{\nabla_{\!\f}}}
+\newcommand{\snGrad} {{\nabla_{\!\f}^{\!\scriptscriptstyle\perp}}}
+\newcommand{\spGrad} {{\nabla_{\!\f}^{\!\scriptscriptstyle\parallel}}}
+
+\newcommand{\deltaT} {{\ensuremath{\Delta t}}}
+
+\newcommand{\normalised}[1] {{\mathrlap{\mathrlap{#1}\widetilde{\hphantom{\q\ \ }\vphantom{#1}}}\hphantom{#1}}}
+
+\newcommand{\timeInt}[1] {{\int_{t}^{t + \deltaT} #1 \dt}}
+\newcommand{\spatTimeIntegral} {{\ensuremath{\cal S}}}
+
+%\newcommand{\timeLevelOld}[1] {{\ensuremath{\mathrlap{#1}\left.\phantom{\scriptscriptstyle #1}\right.^o}}}
+\newcommand{\timeLevelOld}[1] {{\ensuremath{#1{}^o}}}
+\newcommand{\timeLevelOldOld}[1] {{\ensuremath{#1{}^{oo}}}}
+\newcommand{\timeLevelCurrent}[1] {{\ensuremath{#1{}^\sharp}}}
+
+\newcount\countRep % Var n:Integer;
+\newcommand{\updateLevel}[2] {{
+\def\repeat##1##2% % Procedure repeat(p1,p2);
+{ 
+  \countRep=##1 % n:=p1;
+  \ifnum\countRep>0 % If n>0 Then Begin
+  ##2%\par % WriteLn(p2);
+  \advance\countRep by -1 % n:=n-1;
+  \repeat{\countRep}{##2} % repeat(n,p2)
+  \fi % End
+}
+\ensuremath{\left.#2\right.^{\repeat{#1}{\ast}}}
+}}
+
+\newcommand{\timeLevelNew}[1] {{\ensuremath{\left.#1\right.^n}}}
+
+
+% ---------------------------------
+% fvc - calculus
+% ---------------------------------
+\newcommand{\fvcinterpolate}[4] {{{#1}_{\f\scriptscriptstyle(#2,#3,#4)}}}
+
+\newcommand{\fvcddt}[1] {{\ddt{#1}}}
+%\frac{d #1}{dt}
+\newcommand{\fvcDDt}[1] {{\DDt{#1}}}
+\newcommand{\fvcDpDt}[2] {{\DpDt{#1}{#2}}}
+
+\newcommand{\fvcdiv}[4]
+{
+    \div{\left(#1\fvcinterpolate{#2}{#1}{#3}{#4}\right)}
+}
+
+\newcommand{\fvcUgrad}[4]
+{
+    \div{\left(#1\fvcinterpolate{#2}{#1}{#3}{#4}\right)}
+  - \div\left(#1\right)#2
+}
+
+\newcommand{\fvcgrad}[1] {{\grad #1}}
+\newcommand{\fvclaplacian}[2] {{\div{\left(#1\grad{#2}\right)}}}
+
+
+% ---------------------------------
+% fvm - matrix
+% ---------------------------------
+\newcommand{\dleftsq}{\left \ldbrack}
+\newcommand{\drightsq}{\right \rdbrack}
+
+%alternative 1: taken from stmaryrd package
+%in order to provide llbracket and rrbracket
+% (CAVE: Do not remove and replace by \usepackage{stmaryrd}
+%  since there is a conflict with bold symbols)
+\makeatletter
+  \def\stmry@if#1#2{\let#2=\@undefined\iftrue#1#2}
+  \DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
+  \stmry@if\DeclareMathDelimiter\llbracket{\mathopen}{stmry}{"4A}
+    {stmry}{"71}\fi
+  %\stmry@if\DeclareMathDelimiter\dleftsq{\mathopen}{stmry}{"4A}
+  \stmry@if\DeclareMathDelimiter\rrbracket{\mathclose}{stmry}{"4B}
+    {stmry}{"79}\fi
+  %\stmry@if\DeclareMathDelimiter\drightsq{\mathclose}{stmry}{"4B}
+\makeatother
+\renewcommand{\dleftsq}{\left \llbracket}
+\renewcommand{\drightsq}{\right \rrbracket}
+
+
+
+\newcommand{\AM}[1] {{#1}_A}
+\newcommand{\SM}[1] {{#1}_S}
+\newcommand{\DM}[1] {{#1}_D}
+\newcommand{\UM}[1] {{#1}_U}
+\newcommand{\LM}[1] {{#1}_L}
+\newcommand{\HM}[1] {{#1}_H}
+
+\newcommand{\HOp} {\ensuremath{\boldsymbol{\mathcal{H}}}}
+\newcommand{\AOp} {\ensuremath{\mathcal{A}}}
+\newcommand{\HOpFrom}[1] {\ensuremath{\HOp\left[#1\right]}}
+\newcommand{\AOpFrom}[1] {\ensuremath{\AOp\left[#1\right]}}
+
+\newcommand{\diffOp}{\ensuremath{\mathcal{L}}}
+
+\newcommand{\fvMatrix}[2] {\dleftsq#1\left[ #2 \right]\drightsq}
+\newcommand{\fvmSp}[2] {\fvMatrix{#1}{#2}}
+%\newcommand{\fvmddt}[1] {{\dleftsq\fvcddt{[#1]}\drightsq}}
+\newcommand{\fvmddt}[2][] {{\dleftsq\fvcddt{#1[#2]}\drightsq}}
+\newcommand{\fvmDDt}[1] {{\dleftsq\fvcDDt{[#1]}\drightsq}}
+\newcommand{\fvmDpDt}[2] {{\dleftsq\fvcDpDt{#1}{[#2]}\drightsq}}
+\newcommand{\fvmdiv}[4] {{\dleftsq\fvcdiv{#1}{[#2]}{#3}{#4}\drightsq}}
+\newcommand{\fvmDiv}[2] {{\dleftsq\div{\left(#1\right)[#2]}\drightsq}}
+\newcommand{\fvmUgrad}[4]
+  {
+      \dleftsq\fvcdiv{#1}{[#2]}{#3}{#4}\drightsq
+    - \fvmSp{\div\left(#1\right)}{#2}
+  }
+\newcommand{\fvmgrad}[1] {{\dleftsq\fvcgrad{[#1]}\drightsq}}
+\newcommand{\fvmlaplacian}[2] {{\dleftsq\fvclaplacian{#1}{[#2]}\drightsq}}
+
+\newcommand{\avOver}[2] {{\left<#2\right>_{\!\scriptscriptstyle#1}}}
+\newcommand{\avGrad}[1] {{\avOver{\nabla}{#1}}}
+
+\newcommand{\corrComp}[2] {\overline{#1}^{\scriptscriptstyle\Crm}_{\scriptscriptstyle #2}}
+\newcommand{\diffComp}[2] {\overline{#1}^{\scriptscriptstyle\Drm}_{\scriptscriptstyle #2}}
+
+% ---------------------------------
+% Miscellaneous
+% ---------------------------------
+% numerical stencil
+\newcommand{\physStencil} {\ensuremath{\Delta}}
+%\newcommand{\numStencil} {{\scriptstyle\Delta}}
+% physical stencil (i.e. averaging volume)
+\newcommand{\numStencil} {{\text{\ding{113}}}}
+%\newcommand{\physStencil} {{\scriptstyle\square}}
+
+\newcommand{\total} {\ensuremath{\Trm}}
+\newcommand{\genFactor} {\ensuremath{\gamma}}
+
+%volumetric face flux
+\newcommand{\volFlux} {\ensuremath{F}}
+%mass face flux
+\newcommand{\massFlux} {{\ensuremath{\cal F}}}
+% -----------------------------------------------------------------------------
+% finiteVolume.sty ends here
+
