@@ -72,9 +72,9 @@
 \copyrightinfo{\currentyear}%    % copyright year
   {OpenFOAM$^{\textregistered}$ Journal}% copyright holder
 
-\newcommand{\@OpenFOAMversion}{}
-\newcommand{\OpenFOAMversion}[1]{\renewcommand{\@OpenFOAMversion}{#1}}
-\newcommand{\theOpenFOAMversion}{\@OpenFOAMversion}
+\newcommand{\@OpenFOAMversions}{}
+\newcommand{\OpenFOAMversions}[1]{\renewcommand{\@OpenFOAMversions}{#1}}
+\newcommand{\theOpenFOAMversions}{\@OpenFOAMversions}
 
 \newcommand{\@DOI}{}
 \newcommand{\DOI}[1]{\renewcommand{\@DOI}{#1}}
@@ -111,7 +111,7 @@
   % Software and Manuscript
   \qquad\quad\begin{tabular}{ll}
     \footnotesize\textbf{DOI}: & \href{https://doi.org/\theDOI}{\@DOI}\\
-    \footnotesize\textbf{Version}: & \@OpenFOAMversion\\
+    \footnotesize\textbf{Version(s)}: & \@OpenFOAMversions\\
     \footnotesize\textbf{Repo}: & \href{\theRepository}{\@Repository}
   \end{tabular}
   \medskip

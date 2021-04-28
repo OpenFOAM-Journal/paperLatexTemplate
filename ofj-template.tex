@@ -36,28 +36,34 @@
 \usepackage{tensorNotation}
 \usepackage{finiteVolumeNotation}
 
+%    Other packages
+\usepackage{setspace}
+\usepackage{lineno}
 \usepackage{color}
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
 \usepackage{comment}
 \newcommand{\comment}[1]{}  %comment not showed
 
-% Pick one of the following
+%    Pick one of the following
 \usepackage[markup=underlined]{changes} % Show changes
 %\usepackage[final]{changes} % Final version
 
-% In addition, comment the following line to hide the comment sections
+%    In addition, comment the following line to hide the comment sections
 \includecomment{comment}
 
-% Define note (same as used in OFW bye-laws)
+%    Define note (same as used in OFW bye-laws)
 \newcommand{\note}[2][]{\added[#1,remark={#2}]{}}
 
-% Define note colour by author
-% If you would like to add notes, please add a line with your name here and a
-% unique colour
+%    Define note colour by author
+%    If you would like to add notes, please add a line with your name here and a
+%    unique colour
 \definechangesauthor[color=NavyBlue]{HN} %Håkan Nilsson
 \definechangesauthor[color=Green]{PC} %Philip Cardiff
 % \definechangesauthor[color=Bittersweet]{JS} % John Smith
 
+%    \paragraph gives the same as the main body so we will remove its definition
+%    \subsection and \subsubsection can be used if desired
+\let\paragraph\undefined
 
 %     Update the information is not the copyright
 %     holder.
@@ -65,18 +71,19 @@
 \numberwithin{equation}{section}
 \newcommand{\OF}[0]{OpenFOAM\textsuperscript{\textregistered} }
 
-\OpenFOAMversion{\OF v19xx}
+\OpenFOAMversions{\OF v19xx}
 \Repository{https://github.com/xxx}
 \DOI{00.1000/xxx} %leave for submission
 
 
+%    For review, use double spacing
+\doublespacing
 
 \begin{document}
 
-% These notes are taken from the OFW16 Bye-Laws
+%    These notes are taken from the OFW16 Bye-Laws
 \begin{comment}
 
-%\begin{comment}
 \section*{The actual document starts on next page. Some instructions:}
 
 \section*{How to track changes}
@@ -97,50 +104,53 @@
 \end{comment}
 
 
-%    Abstract is required.
-\begin{abstract}
-This is the place for an abstract.
-\end{abstract}
-
 %    \title[short text for running head]{full title}
 \title[\OF Journal publication]{\OF Journal publication}
+
+
+%    Author information
+%    Note: authors should not be defined for the review process as the review is double-blind
+%    Author names should be given as initials for forenames followed by the surname: see the examples below
 
 %    Only \author and \address are required; other information is
 %    optional.  Remove any unused author tags.
 
-%    author one information
 %    \author[short version for running head]{name for top of paper}
-\author{Author1}
-\address{Address1}
-\curraddr{}
-\email{Emailaddress1}
-\thanks{}
 
-%    author two information
-\author{Author2}
-\address{Address2}
-\curraddr{}
-\email{Emailaddress2}
-\thanks{}
+%    Author one information
+%\author{J. Smith}
+%\address{Address1}
+%\email{Emailaddress1}
+
+%    Author two information
+%\author{P. Murphy}
+%\address{Address2}
+%\email{Emailaddress2}
+
+%    Add extra authors if required
+
+%    Abstract is required
+\begin{abstract}
+This is the place for an abstract.
+\end{abstract}
 
 
-\date{xx.xx.202x}
+\date{\today}
 
 \dedicatory{}
 
 
 \maketitle
 
+%   Line numbering should be enable for review
+\linenumbers  
+
+
 \section{Introduction}
 
 This is the place for introduction.
 
 \subsection{Subsection}
-
-\begin{comment}
-TEST TEST TES
-\end{comment}
-
 
 Example text: 
 
@@ -162,7 +172,7 @@ solve
   Sphi
 );
 \end{lstlisting}
-Beside providing OpenFOAM code itself, spatial and temporal discretisation of Eq.\ \ref{eq:genTransEq} can be also described in a precise and concise manner using the finite-volume notation\, \cite{Rusche2002} - see Tab.\ \ref{tab:FiniteVolumeNotation}.
+Beside providing OpenFOAM code itself, spatial and temporal discretisation of Eq.\ \ref{eq:genTransEq} can be also described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see Tab.\ \ref{tab:FiniteVolumeNotation}.
 
 \begin{table}
 	\caption{Finite Volume Notation}
@@ -204,21 +214,24 @@ Text in this section. Here is an examplary figure \ref{fig:example}.
 
 This is a conclusion.
 
+
+%\section*{Acknowledgements}
+%
+%This is an example acknowledgements section and should only be included after the review process and before publication.
+
+
+% If required, include appendices here
+%\appendix
+%
+%\section{Example appendix}
+%
+%This is an example appendix
+
+
 %    Bibliographies can be prepared with BibTeX using IEEEtran style,
 \bibliographystyle{IEEEtran}%do not change
 
-%    Insert the bibliography data here.
-\begin{thebibliography}{1}
-
-\bibitem{Rusche2002}
-H.~Rusche.
-\newblock {\em {Computational Fluid Dynamics of Dispersed Two-Phase Flows at
-  High Phase Fractions}}.
-\newblock PhD thesis, {Imperial College of Science, Technology \& Medicine
-  London}, 2002.
-
-\end{thebibliography}
-
+\bibliography{Bibliography}
 
 \end{document}
 
