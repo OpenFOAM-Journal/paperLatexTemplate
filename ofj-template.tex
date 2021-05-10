@@ -36,13 +36,16 @@
 \usepackage{tensorNotation}
 \usepackage{finiteVolumeNotation}
 
-%    Other packages
+%    Other packages and commands
 \usepackage{setspace}
 \usepackage{lineno}
 \usepackage{color}
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
 \usepackage{comment}
 \newcommand{\comment}[1]{}  %comment not showed
+
+\newcommand{\authorcontributions}[1]{%
+\vspace{6pt}\noindent{\fontsize{9}{11.2}\selectfont\textbf{Author Contributions:} {#1}\par}}
 
 %    Pick one of the following
 \usepackage[markup=underlined]{changes} % Show changes
@@ -219,6 +222,29 @@ This is a conclusion.
 %
 %This is an example acknowledgements section and should only be included after the review process and before publication.
 
+
+% The OpenFOAM Journal requires the contributions of all authors to be explicitly stated
+% As noted below, please see \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation.
+% Replace the example authors initials (F.A., S.A) below as appropriate
+\authorcontributions{
+Conceptualisation, J.S.;
+methodology, J.S.;
+software, J.S;
+validation, J.S. and P.M.;
+formal analysis, J.S. and P.M.;
+investigation, J.S.;
+resources, P.M.;
+data curation, P.M.;
+writing---original draft preparation, J.S.;
+writing---review and editing, J.S. and P.M.;
+visualisation, J.S.;
+supervision, P.M.;
+project administration, P.M.;
+funding acquisition, P.M.
+All authors have read and agreed to the published version of the manuscript.
+\emph{Please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation.}
+}
+ 
 
 % If required, include appendices here
 %\appendix
