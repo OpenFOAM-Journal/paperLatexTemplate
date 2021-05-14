@@ -1,5 +1,5 @@
 %-----------------------------------------------------------------------
-% Beginning of ofj-template.tex
+%     Beginning of ofj-template.tex
 %-----------------------------------------------------------------------
 %
 %     This is a topmatter template file for OpenFOAM Journal with LaTeX.
@@ -7,6 +7,8 @@
 %     Templates for various common text, math and figure elements are
 %     given following the \end{document} line.
 %     This file is based on the template provided by AMS.
+%
+%     Some parts of this document are based on OFW16 Bye-Laws
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -28,6 +30,10 @@
 %
 %-----------------------------------------------------------------------
 
+%-----------------------------------------------------------------------
+%      Please do not modify the entries in this section
+%-----------------------------------------------------------------------
+
 %     Remove any commented or uncommented macros you do not use.
 
 \documentclass[e-only,10pt,reqno]{ofj}
@@ -47,11 +53,27 @@
 \newcommand{\authorcontributions}[1]{%
 \vspace{6pt}\noindent{\fontsize{9}{11.2}\selectfont\textbf{Author Contributions:} {#1}\par}}
 
-%    Pick one of the following
-\usepackage[markup=underlined]{changes} % Show changes
-%\usepackage[final]{changes} % Final version
+%    \paragraph gives the same as the main body so we will remove its definition
+%    \subsection and \subsubsection can be used if desired
+\let\paragraph\undefined
 
-%    In addition, comment the following line to hide the comment sections
+%     Update the information is not the copyright
+%     holder.
+\copyrightinfo{2020}{OpenFOAM$^{\textregistered}$ Journal}
+\numberwithin{equation}{section}
+\newcommand{\OF}[0]{OpenFOAM\textsuperscript{\textregistered} }
+
+
+%-----------------------------------------------------------------------
+%      Please modify the entries in this section according to your neeeds
+%-----------------------------------------------------------------------
+
+%    Pick one of the following
+\usepackage[markup=underlined]{changes} % Show changes - for writing manuscript and review
+%\usepackage[final]{changes} % Final submitted version
+
+%    In addition, comment the following line to hide the comment sections, if you do not need it
+%    Please use this before submission and remove comments for review 
 \includecomment{comment}
 
 %    Define note (same as used in OFW bye-laws)
@@ -64,25 +86,27 @@
 \definechangesauthor[color=Green]{PC} %Philip Cardiff
 % \definechangesauthor[color=Bittersweet]{JS} % John Smith
 
-%    \paragraph gives the same as the main body so we will remove its definition
-%    \subsection and \subsubsection can be used if desired
-\let\paragraph\undefined
-
-%     Update the information is not the copyright
-%     holder.
-\copyrightinfo{2020}{OpenFOAM$^{\textregistered}$ Journal}
-\numberwithin{equation}{section}
-\newcommand{\OF}[0]{OpenFOAM\textsuperscript{\textregistered} }
-
-\OpenFOAMversions{\OF v19xx}
+%    Please enter your OpenFOAM version
+\OpenFOAMversions{\OF v20xx}
+%    Please enter your repository - for final version 
 \Repository{https://github.com/xxx}
-\DOI{00.1000/xxx} %leave for submission
 
+\DOI{00.1000/xxx} %leave for submission
 
 %    For review, use double spacing
 \doublespacing
 
+%-----------------------------------------------------------------------
+%      The manuscript starts here
+%-----------------------------------------------------------------------
+
 \begin{document}
+
+%-----------------------------------------------------------------------
+%      An example for using comments to track changes
+%      Please use these for manuscript preparation
+%      Remove these comments for submission and final version
+%-----------------------------------------------------------------------
 
 %    These notes are taken from the OFW16 Bye-Laws
 \begin{comment}
@@ -105,6 +129,10 @@
 \newpage
 
 \end{comment}
+
+%-----------------------------------------------------------------------
+%      Manuscript title and author description
+%-----------------------------------------------------------------------
 
 
 %    \title[short text for running head]{full title}
@@ -132,6 +160,10 @@
 
 %    Add extra authors if required
 
+%-----------------------------------------------------------------------
+%      Manuscript abstract
+%-----------------------------------------------------------------------
+
 %    Abstract is required
 \begin{abstract}
 This is the place for an abstract.
@@ -145,9 +177,12 @@ This is the place for an abstract.
 
 \maketitle
 
-%   Line numbering should be enable for review
+%   Line numbering should be enable for review and disabled for final version
 \linenumbers  
 
+%-----------------------------------------------------------------------
+%      Start introduction here and continue with additional sections
+%-----------------------------------------------------------------------
 
 \section{Introduction}
 
@@ -175,7 +210,7 @@ solve
   Sphi
 );
 \end{lstlisting}
-Beside providing OpenFOAM code itself, spatial and temporal discretisation of Eq.\ \ref{eq:genTransEq} can be also described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see Tab.\ \ref{tab:FiniteVolumeNotation}.
+Beside providing \OF code itself, spatial and temporal discretisation of Eq.\ \ref{eq:genTransEq} can be also described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see Tab.\ \ref{tab:FiniteVolumeNotation}.
 
 \begin{table}
 	\caption{Finite Volume Notation}
@@ -217,34 +252,40 @@ Text in this section. Here is an examplary figure \ref{fig:example}.
 
 This is a conclusion.
 
+%-----------------------------------------------------------------------
+%      Start with acknowledgements here
+%-----------------------------------------------------------------------
 
 %\section*{Acknowledgements}
 %
-%This is an example acknowledgements section and should only be included after the review process and before publication.
+%This is an example acknowledgements section and should only be included !after! the review process and before publication.
 
 
 % The OpenFOAM Journal requires the contributions of all authors to be explicitly stated
 % As noted below, please see \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation.
 % Replace the example authors initials (F.A., S.A) below as appropriate
-\authorcontributions{
-Conceptualisation, J.S.;
-methodology, J.S.;
-software, J.S;
-validation, J.S. and P.M.;
-formal analysis, J.S. and P.M.;
-investigation, J.S.;
-resources, P.M.;
-data curation, P.M.;
-writing---original draft preparation, J.S.;
-writing---review and editing, J.S. and P.M.;
-visualisation, J.S.;
-supervision, P.M.;
-project administration, P.M.;
-funding acquisition, P.M.
-All authors have read and agreed to the published version of the manuscript.
-\emph{Please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation.}
-}
+%\authorcontributions{
+%Conceptualisation, J.S.;
+%methodology, J.S.;
+%software, J.S;
+%validation, J.S. and P.M.;
+%formal analysis, J.S. and P.M.;
+%investigation, J.S.;
+%resources, P.M.;
+%data curation, P.M.;
+%writing---original draft preparation, J.S.;
+%writing---review and editing, J.S. and P.M.;
+%visualisation, J.S.;
+%supervision, P.M.;
+%project administration, P.M.;
+%funding acquisition, P.M.
+%All authors have read and agreed to the published version of the manuscript.
+%\emph{Please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation.}
+%}
  
+%-----------------------------------------------------------------------
+%      Start with appendices here
+%-----------------------------------------------------------------------
 
 % If required, include appendices here
 %\appendix
@@ -262,6 +303,10 @@ All authors have read and agreed to the published version of the manuscript.
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------------
+%      This is not part of the manuscript itself
+%-----------------------------------------------------------------------
 
 %    Templates for common elements of a journal article; 
 
