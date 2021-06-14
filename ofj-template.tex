@@ -47,8 +47,6 @@
 \usepackage{lineno}
 \usepackage{color}
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
-\usepackage{comment}
-\newcommand{\comment}[1]{}  %comment not showed
 
 \newcommand{\authorcontributions}[1]{%
 \vspace{6pt}\noindent{\fontsize{9}{11.2}\selectfont\textbf{Author Contributions:} {#1}\par}}
@@ -68,24 +66,6 @@
 %      Please modify the entries in this section according to your neeeds
 %-----------------------------------------------------------------------
 
-%    Pick one of the following
-\usepackage[markup=underlined]{changes} % Show changes - for writing manuscript and review
-%\usepackage[final]{changes} % Final submitted version
-
-%    In addition, comment the following line to hide the comment sections, if you do not need it
-%    Please use this before submission and remove comments for review 
-\includecomment{comment}
-
-%    Define note (same as used in OFW bye-laws)
-\newcommand{\note}[2][]{\added[#1,remark={#2}]{}}
-
-%    Define note colour by author
-%    If you would like to add notes, please add a line with your name here and a
-%    unique colour
-\definechangesauthor[color=NavyBlue]{HN} %Håkan Nilsson
-\definechangesauthor[color=Green]{PC} %Philip Cardiff
-% \definechangesauthor[color=Bittersweet]{JS} % John Smith
-
 %    Please enter your OpenFOAM version
 \OpenFOAMversions{\OF v20xx}
 %    Please enter your repository - for final version 
@@ -101,34 +81,6 @@
 %-----------------------------------------------------------------------
 
 \begin{document}
-
-%-----------------------------------------------------------------------
-%      An example for using comments to track changes
-%      Please use these for manuscript preparation
-%      Remove these comments for submission and final version
-%-----------------------------------------------------------------------
-
-%    These notes are taken from the OFW16 Bye-Laws
-\begin{comment}
-
-\section*{The actual document starts on next page. Some instructions:}
-
-\section*{How to track changes}
-\begin{itemize}
-    \item Add your initials by \verb+\definechangesauthor+ above \verb+\begin{document}+.\\Pick your favourite color: \verb+https://en.wikibooks.org/wiki/LaTeX/Colors+
-    \item This is how you \added[id=HN]{add} text:\\\verb+\added[id=HN]{add}+
-    \item This is how you \added[id=HN, remark={comment}]{add (with comment)} text: \\\verb+\added[id=HN, remark={comment}]{add (with comment)}+
-    \item This is how you \deleted[id=HN]{delete} text:\\\verb+\deleted[id=HN]{delete}+
-    \item This is how you \deleted[id=HN, remark={comment}]{delete (with comment)} text:\\\verb+\deleted[id=HN, remark={comment}]{delete (with comment)}+
-    \item This is how you make a note \note[id=HN]{A note}:\\\verb+\note[id=HN]{A note}+
-    \item This is how you \replaced[id=HN]{replace}{relapce} text:\\\verb+\replaced[id=HN]{relapce}{replace}+
-    \item This is how you \replaced[id=HN, remark={mis-spelled}]{replace (with comment)}{relapce (wthi coment)} text:\\\verb+\replaced[id=HN, remark={mis-spelled}]{relapse}{replace}+
-    \item All markups can be removed by changing the header to \verb+\usepackage[final]{changes}+ later.
-\end{itemize}
-
-\newpage
-
-\end{comment}
 
 %-----------------------------------------------------------------------
 %      Manuscript title and author description
