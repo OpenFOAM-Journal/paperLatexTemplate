@@ -50,7 +50,7 @@
 \LoadClass{ofjart}[2020/09/23]
 
 \RequirePackage{booktabs}
-\RequirePackage{hyperref}
+\RequirePackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
 \RequirePackage{algorithmic} %Typesetting complex algorithmic constructs
