@@ -49,6 +49,7 @@
 
 \LoadClass{ofjart}[2020/09/23]
 
+\RequirePackage[margin=2.5cm]{geometry}
 \RequirePackage{booktabs}
 \RequirePackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \RequirePackage{graphicx}
