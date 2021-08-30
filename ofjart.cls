@@ -345,7 +345,7 @@
 \let\paragraphmark\@gobble
 
 \DeclareOption{makeidx}{}
-\ExecuteOptions{leqno,centertags,letterpaper,portrait,%
+\ExecuteOptions{leqno,centertags,a4paper,portrait,%
   10pt,twoside,onecolumn,final}
 \ProcessOptions\relax
 \if@compatibility
