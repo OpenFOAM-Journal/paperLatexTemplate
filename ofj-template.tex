@@ -46,6 +46,7 @@
 \usepackage{setspace}
 \usepackage{lineno}
 \usepackage{color}
+\usepackage[symbol]{footmisc}
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
 
 \newcommand{\authorcontributions}[1]{%
@@ -60,7 +61,8 @@
 \copyrightinfo{2021}{OpenFOAM\textsuperscript{\textregistered} Journal}
 %\numberwithin{equation}{section}%Please don't enable this for submission!
 \newcommand{\OF}[0]{OpenFOAM\textsuperscript{\textregistered} }
-
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}%footnote for corresponding author
+\newcommand{\corrauthor}[1]{\author{\underline{#1}}\footnote[1]{Corresponding author}}%command for corresponding author
 
 %-----------------------------------------------------------------------
 %      Please modify the entries in this section according to your neeeds
@@ -100,16 +102,22 @@
 
 %    \author[short version for running head]{name for top of paper}
 
-%    Author one information
-%\author{J. Smith}
+%    Corresponding author information
+%\corrauthor{M. Jersey}
 %\address{Address1}
 %\email{Emailaddress1}
 
 %    Author two information
+%\author{J. Smith}
+%\address{Address1}
+%\email{Emailaddress1}
+
+%    Author three information
 %\author{P. Murphy}
 %\address{Address2}
 %\email{Emailaddress2}
-
+\renewcommand{\thefootnote}{\arabic{footnote}}%go back to normal footnote style
+\setcounter{footnote}{0}%also reset footnote counter
 %    Add extra authors if required
 
 %-----------------------------------------------------------------------
