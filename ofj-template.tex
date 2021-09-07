@@ -16,16 +16,16 @@
 %      Copyright notice
 %-----------------------------------------------------------------------
 %
-%      Authors of papers published  in the OpenFOAM journal retain 
-%      copyright and release their work under the 
+%      Authors of papers published  in the OpenFOAM journal retain
+%      copyright and release their work under the
 %      Creative Commons Attribution-ShareAlike 4.0 International License.
 %      https://creativecommons.org/licenses/by-sa/4.0/
-%      Any code snippets included in the manuscript as well as submitted 
-%      source code as supplementary material are subject to 
-%      the GNU General Public Licence. 
+%      Any code snippets included in the manuscript as well as submitted
+%      source code as supplementary material are subject to
+%      the GNU General Public Licence.
 %      http://www.gnu.org/licenses/gpl-3.0.html
-%      Any usage of the name OpenFOAM as well as the logo is being done 
-%      with the full involvement of OpenCFD, trademark holder of 
+%      Any usage of the name OpenFOAM as well as the logo is being done
+%      with the full involvement of OpenCFD, trademark holder of
 %      OpenFOAM.
 %
 %-----------------------------------------------------------------------
@@ -61,8 +61,6 @@
 \copyrightinfo{2021}{OpenFOAM\textsuperscript{\textregistered} Journal}
 %\numberwithin{equation}{section}%Please don't enable this for submission!
 \newcommand{\OF}[0]{OpenFOAM\textsuperscript{\textregistered} }
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}%footnote for corresponding author
-\newcommand{\corrauthor}[1]{\author{\underline{#1}}\footnote[1]{Corresponding author}}%command for corresponding author
 
 %-----------------------------------------------------------------------
 %      Please modify the entries in this section according to your neeeds
@@ -70,7 +68,7 @@
 
 %    Please enter your OpenFOAM version
 \OpenFOAMversions{\OF v20xx}
-%    Please enter your repository - for final version 
+%    Please enter your repository - for final version
 \Repository{https://github.com/xxx}
 
 \DOI{00.1000/xxx} %leave for submission
@@ -103,7 +101,8 @@
 %    \author[short version for running head]{name for top of paper}
 
 %    Corresponding author information
-%\corrauthor{M. Jersey$^1$}
+%    Indicate the corresponding author with an asteriks
+%\author{\underline{M. Jersey}$^{1,*}$}
 %\address{$^1$Address1}
 %\email{Emailaddress1}
 
@@ -112,14 +111,14 @@
 %%\address{$^1$Address1} % not needed if the same as author 1
 %\email{Emailaddress1}
 
-%    Author three information
+%   Author three information
 %\author{P. Murphy$^2$}
 %\address{$^2$Address2}
 %\email{Emailaddress2}
 
-\renewcommand{\thefootnote}{\arabic{footnote}}%go back to normal footnote style
-\setcounter{footnote}{0}%also reset footnote counter
-%    Add extra authors if required
+%    Add footnote indicating the corresponding author
+%\let\thefootnote\relax\footnote{$^{*}$ Corresponding author}
+
 
 %-----------------------------------------------------------------------
 %      Manuscript abstract
@@ -139,7 +138,7 @@ This is the place for an abstract.
 \maketitle
 
 %   Line numbering should be enable for review and disabled for final version
-\linenumbers  
+\linenumbers
 
 %-----------------------------------------------------------------------
 %      Start introduction here and continue with additional sections
@@ -151,7 +150,7 @@ This is the place for introduction.
 
 \subsection{Subsection}
 
-Example text: 
+Example text:
 
 We shall consider the specific transport property $\Q$ and note that its spatial and temporal variation is governed by a second-order partical differential equation (PDE), viz.\
 \begin{align}
@@ -174,26 +173,26 @@ solve
 Beside providing \OF code itself, spatial and temporal discretisation of Eq.\ \ref{eq:genTransEq} can be also described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see Tab.\ \ref{tab:FiniteVolumeNotation}.
 
 \begin{table}
-	\caption{Finite Volume Notation}
-	\label{tab:FiniteVolumeNotation}
-	\centering
-		\begin{tabular}{p{0.3\textwidth}p{0.3\textwidth}}
-		  \toprule
-			  \multicolumn{2}{l}{implicit differential operators}\\
-		  \midrule
-			  rate of change     & $\fvmddt{\rho\q}$ \\%time derivative
-			  convection term    & $\fvmdiv{F}{\q}{S}{\genFactor}$ \\
-			  diffusion term     & $\fvmlaplacian{\Gamma}{\q}$ \\
-			  linear part of source term & $\fvmSp{S_p}{\q}$ \\
-			\hline
-			  \multicolumn{2}{l}{explicit differential operators}\\
-			\hline
-			  temporal term      & $\fvcddt{\rho\q}$ \\
-			  divergence term    & $\fvcdiv{\rho\U}{\q}{S}{\genFactor}$ \\
-			  laplacian term     & $\fvclaplacian{\Gamma}{\q}$ \\
-			  constant part of source term & $S_u$\\
-		  \bottomrule
-		\end{tabular}
+        \caption{Finite Volume Notation}
+        \label{tab:FiniteVolumeNotation}
+        \centering
+                \begin{tabular}{p{0.3\textwidth}p{0.3\textwidth}}
+                  \toprule
+                          \multicolumn{2}{l}{implicit differential operators}\\
+                  \midrule
+                          rate of change     & $\fvmddt{\rho\q}$ \\%time derivative
+                          convection term    & $\fvmdiv{F}{\q}{S}{\genFactor}$ \\
+                          diffusion term     & $\fvmlaplacian{\Gamma}{\q}$ \\
+                          linear part of source term & $\fvmSp{S_p}{\q}$ \\
+                        \hline
+                          \multicolumn{2}{l}{explicit differential operators}\\
+                        \hline
+                          temporal term      & $\fvcddt{\rho\q}$ \\
+                          divergence term    & $\fvcdiv{\rho\U}{\q}{S}{\genFactor}$ \\
+                          laplacian term     & $\fvclaplacian{\Gamma}{\q}$ \\
+                          constant part of source term & $S_u$\\
+                  \bottomrule
+                \end{tabular}
 \end{table}
 
 \section{Theoretical backgroud}
@@ -244,7 +243,7 @@ This is a conclusion.
 %funding acquisition, P.M.
 %All authors have read and agreed to the published version of the manuscript.
 %}
- 
+
 %-----------------------------------------------------------------------
 %      Start with appendices here
 %-----------------------------------------------------------------------
@@ -270,7 +269,7 @@ This is a conclusion.
 %      This is not part of the manuscript itself
 %-----------------------------------------------------------------------
 
-%    Templates for common elements of a journal article; 
+%    Templates for common elements of a journal article;
 
 %    Section headings
 \section{}
