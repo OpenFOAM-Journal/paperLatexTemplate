@@ -1,3 +1,4 @@
+%% Look for comments with "JN:" to change settings
 %%
 %% This is file `ofjart.cls',
 %%
@@ -139,7 +140,7 @@
 }
 \DeclareOption{e-only}{%
   \def\volinfo{Volume \currentvolume}%
-  \dateposted{Xxxx XX, XXXX}%JN: Should we define the date here?
+  \dateposted{}
   \def\@setdateposted{\ (\@dateposted)}%
   \let\article@logo\eonly@logo
 }
@@ -677,8 +678,8 @@
 \def\@printyear{TF}% boolean false
 \def\issueinfo#1#2#3#4{\def\currentvolume{#1}\def\currentissue{#2}%
   \def\currentmonth{#3}\def\currentyear{#4}}
-\issueinfo{00}% volume number
-  {0}%        % issue number
+\issueinfo{123}% volume number%JN: change  this number
+  {1}%        % issue number
   {Xxxx}%     % month
   {XXXX}%     % year
 \newcommand{\copyrightinfo}[2]{%
@@ -689,7 +690,7 @@
 \def\pagespan#1#2{\setcounter{page}{#1}%
   \ifnum\c@page<\z@ \pagenumbering{roman}\setcounter{page}{-#1}\fi
   \def\start@page{#1}\def\end@page{#2}}
-\pagespan{000}{000}
+\pagespan{1}{999}%JN: change  these values
 \AtBeginDocument{%
   \@ifundefined{pageinfo}{%
     \def\pageinfo{%
@@ -706,7 +707,8 @@
 }
 \@ifundefined{ISSN}{\def\ISSN{0000-0000}}{}
 \newcommand\PII[1]{\def\@PII{#1}}
-\PII{S \ISSN(XX)0000-0}
+%\PII{S \ISSN(XX)0000-0}%JN use ISSN here
+\PII{ISSN: TBD}
 \newinsert\copyins
 \skip\copyins=1.5pc
 \count\copyins=1000 % magnification factor, 1000 = 100%
@@ -789,7 +791,7 @@
 \ifx\@classname\@tempb
   \newcommand{\datename}{\textit{Date}:}
 \else
-  \newcommand{\datename}{Received by the editors}
+  \newcommand{\datename}{$^{*}$ Corresponding author\par Received: 14 Juntember 2022, Accepted: 29 Januaril 2022, Published: 17 Decemby 2022}%JN: change dates here
 \fi
 \def\@settitle{\begin{center}%
   \baselineskip14\p@\relax
@@ -826,7 +828,8 @@
   \@xcontribs
   \MakeUppercase{\xcontribs}%
 }
-\def\@setdate{\datename\ \@date\@addpunct.}
+%\def\@setdate{\datename\ \@date\@addpunct.}
+\def\@setdate{\datename\ }
 \def\@setsubjclass{%
   {\itshape\subjclassname.}\enspace\@subjclass\@addpunct.}
 \def\@setkeywords{%

@@ -89,7 +89,6 @@
 
 %  Set abstract at the end of the paper instead of the topmatter section
 \def\@maketitle{%
-  \vspace{4em}
   \normalfont\normalsize
   \let\@makefnmark\relax  \let\@thefnmark\relax
 \ifx\@empty\@date\else \@footnotetext{\@setdate}\fi
