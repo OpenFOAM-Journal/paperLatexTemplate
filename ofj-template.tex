@@ -48,6 +48,7 @@
 \usepackage{color}
 \usepackage[symbol]{footmisc}
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{orcidlink}
 
 \newcommand{\authorcontributions}[1]{%
 \vspace{6pt}\noindent{\fontsize{9}{11.2}\selectfont\textbf{Author Contributions:} {#1}\par}}
@@ -102,14 +103,15 @@
 
 %    Corresponding author information
 %    Indicate the corresponding author with an asteriks
-\author{M. Jersey$^{1,*}$}
+%    You can optionally add an Orcid link
+\author{M. Jersey$^{1,*}$\orcidlink{0000-1234-5678-0000}}
 \address{$^1$Address1}
 \email{Emailaddress1}
 
 %    Author two information
 \author{J. Smith$^2$}
-\address{$21$Address1} % not needed if the same as author 1
-\email{Emailaddress1}
+\address{$2$Address2} % not needed if the same as author 1
+\email{Emailaddress2}
 
 %   Author three information
 %\author{P. Murphy$^2$}
