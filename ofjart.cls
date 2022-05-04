@@ -678,7 +678,7 @@
 \def\@printyear{TF}% boolean false
 \def\issueinfo#1#2#3#4{\def\currentvolume{#1}\def\currentissue{#2}%
   \def\currentmonth{#3}\def\currentyear{#4}}
-\issueinfo{123}% volume number%JN: change  this number
+\issueinfo{2 [Enter correct Journal Section here]}% volume number%JN: change  this number
   {1}%        % issue number
   {Xxxx}%     % month
   {XXXX}%     % year
@@ -708,7 +708,7 @@
 \@ifundefined{ISSN}{\def\ISSN{0000-0000}}{}
 \newcommand\PII[1]{\def\@PII{#1}}
 %\PII{S \ISSN(XX)0000-0}%JN use ISSN here
-\PII{ISSN: TBD}
+\PII{ISSN: 2753-8168}
 \newinsert\copyins
 \skip\copyins=1.5pc
 \count\copyins=1000 % magnification factor, 1000 = 100%
