@@ -68,7 +68,7 @@
     language=C++,
     numbers=left}
 
-\def\publname{\includegraphics[scale=0.15]{OpenFOAMJournal.png}\\[0.15em]}
+\def\publname{\includegraphics[scale=1.0]{OpenFOAMJournal.pdf}\\[0.15em]}
 
 \copyrightinfo{\currentyear}%    % copyright year
   {OpenFOAM$^{\textregistered}$ Journal}% copyright holder
