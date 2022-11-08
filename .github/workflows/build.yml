@@ -9,8 +9,6 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
-    - name: Install additional fonts # Only to make the MnSymbol in tensorNotation.sty work
-      run: apt-get update && apt-get install -y texlive-fonts-extra
     - name: Build template
       run: make
     - name: Upload log files, if building failed
