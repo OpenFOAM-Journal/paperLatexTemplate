@@ -19,3 +19,11 @@ make continuously
 ```
 
 which passes the `-pvc` flag to latexmk.
+
+To prepare a review version of your manuscript, you can run
+
+```shell
+make review
+```
+
+which enables double line spacing and excludes some identifying information (authors and affiliations, repository, acknowledgements). In case you rename `ofj-template.tex`, you need to also adjust the name of the file included in `ofj-template-review.tex`.
