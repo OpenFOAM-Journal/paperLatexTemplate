@@ -1034,7 +1034,7 @@
 \def\@startsection#1#2#3#4#5#6{%
  \if@noskipsec \leavevmode \fi
  \par \@tempskipa #4\relax
- \@afterindenttrue
+ \@afterindentfalse
  \ifdim \@tempskipa <\z@ \@tempskipa -\@tempskipa \@afterindentfalse\fi
  \if@nobreak \everypar{}\else
      \addpenalty\@secpenalty\addvspace\@tempskipa\fi
