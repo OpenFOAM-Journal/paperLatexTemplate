@@ -796,7 +796,6 @@
 \def\@settitle{\begin{center}%
   \baselineskip14\p@\relax
     \bfseries
-\uppercasenonmath\@title
   \@title
   \end{center}%
 }
