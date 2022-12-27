@@ -9,6 +9,10 @@ all:
 continuously:
 	latexmk ${FLAGS} -pvc ${DOCUMENT}.tex
 
+review:
+	latexmk ${FLAGS} ${DOCUMENT}-review.tex
+
 clean:
 	latexmk -C ${FLAGS} ${DOCUMENT}.tex
-	rm -fv ${DOCUMENT}.bbl
+	latexmk -C ${FLAGS} ${DOCUMENT}-review.tex
+	rm -fv ${DOCUMENT}.bbl ${DOCUMENT}-review.bbl
