@@ -19,3 +19,9 @@ make continuously
 ```
 
 which passes the `-pvc` flag to latexmk.
+
+## Contributing
+
+Feel free to [open an issue](https://github.com/OpenFOAM-Journal/paperLatexTemplate/issues) explaining any problems or feature requests. Ideally, it would really help if you could directly [propose changes in a pull request](https://github.com/OpenFOAM-Journal/paperLatexTemplate/pulls) from your fork ([read how](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)). Describe your contribution in detail in the PR and try to use concise and descriptive commit messages. To keep the history clean, squash multiple related commits into one and update your branch with a force-push.
+
+Your PR will be checked automatically with [GitHub Actions](https://docs.github.com/en/actions) and we can only accept contributions that pass these checks. At the bottom of your PR, you will find the status of these checks. If a red ❌ appears next to any of these checks, click on it to learn more. In the "Summary" view, you can download the LaTeX log files to figure out more. If you only see ✅, then the template builds successfully and you can download the resulting PDF files as build artifcats from the bottom of the "Summary" view.
