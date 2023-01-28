@@ -22,6 +22,8 @@ make continuously
 
 which passes the `-pvc` flag to latexmk.
 
+Set your project name and type in the beginning of the Makefile (see comments).
+
 =======
 ## Review Version
 

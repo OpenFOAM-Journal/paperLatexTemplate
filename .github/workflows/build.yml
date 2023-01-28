@@ -27,5 +27,5 @@ jobs:
       with:
         name: template pdf
         path: |
-          ofj-template.pdf
-          ofj-template-review.pdf
+          ofj-template_SetTypeInMakefile.pdf
+          ofj-template_SetTypeInMakefile-review.pdf
