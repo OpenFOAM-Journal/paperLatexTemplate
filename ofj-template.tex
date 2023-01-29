@@ -149,7 +149,10 @@ This is the place for an abstract.
 \maketitle
 
 %   Line numbering should be enable for review and disabled for final version
-\linenumbers
+\ifdefined\review
+  \linenumbers
+\else
+\fi
 
 %-----------------------------------------------------------------------
 %      Start introduction here and continue with additional sections
