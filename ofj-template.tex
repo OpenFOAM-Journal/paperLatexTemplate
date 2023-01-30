@@ -136,10 +136,7 @@
 %      Manuscript abstract
 %-----------------------------------------------------------------------
 
-%    Abstract is required
-\begin{abstract}
-This is the place for an abstract.
-\end{abstract}
+\input{parts/abstract.tex}
 
 
 \date{\today}
@@ -155,77 +152,14 @@ This is the place for an abstract.
 \else
 \fi
 
+\input{parts/introduction}
+
 %-----------------------------------------------------------------------
-%      Start introduction here and continue with additional sections
+%      Add more sections here
 %-----------------------------------------------------------------------
+\input{parts/section}
 
-\section{Introduction}
-
-This is the place for introduction.
-
-\subsection{Subsection}
-
-Example text:
-
-We shall consider the specific transport property $\Q$ and note that its spatial and temporal variation is governed by a second-order partical differential equation (PDE), viz.\
-\begin{align}
-    \ddt{}(\rho \Q) + \div(\rho \Q \U) - \Gamma_{\Q}\laplacian\Q - S_\Q(\Q) = 0.
-    \label{eq:genTransEq}
-\end{align}
-Herein, $\Q=\Q(\xt)$ is an arbitrary general intensive physical quantitity, e.g., a fluid property (scalar or tensor of any rank). Thus, \autoref{eq:genTransEq} is often referred to as generic transport equation.
-
-\OF (Open Field Operation And Manipulation) is a flexible and mature C++ Class Library for Computational Continuum Mechanics (CCM) and Multiphysics. Its Object-Oriented-Programming (OOP) paradigm enables to \emph{mimic data types and basic operations} of CCM using top-level syntax as close as possible to the conventional mathematical notation \emph{for tensors and partial differential equations}:
-\begin{lstlisting}[emph={ddt,div,laplacian}]
-solve
-(
-  fvm::ddt(rho,Phi)
-  + fvm::div(phi, Phi)
-  - fvm::laplacian(Gamma, Phi)
- ==
-  Sphi
-);
-\end{lstlisting}
-Beside providing \OF code itself, spatial and temporal discretisation of \autoref{eq:genTransEq} can be also described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see \autoref{tab:FiniteVolumeNotation}.
-
-\begin{table}
-        \caption{Finite Volume Notation}
-        \label{tab:FiniteVolumeNotation}
-        \centering
-                \begin{tabular}{p{0.3\textwidth}p{0.3\textwidth}}
-                  \toprule
-                          \multicolumn{2}{l}{implicit differential operators}\\
-                  \midrule
-                          rate of change     & $\fvmddt{\rho\q}$ \\%time derivative
-                          convection term    & $\fvmdiv{F}{\q}{S}{\genFactor}$ \\
-                          diffusion term     & $\fvmlaplacian{\Gamma}{\q}$ \\
-                          linear part of source term & $\fvmSp{S_p}{\q}$ \\
-                        \hline
-                          \multicolumn{2}{l}{explicit differential operators}\\
-                        \hline
-                          temporal term      & $\fvcddt{\rho\q}$ \\
-                          divergence term    & $\fvcdiv{\rho\U}{\q}{S}{\genFactor}$ \\
-                          laplacian term     & $\fvclaplacian{\Gamma}{\q}$ \\
-                          constant part of source term & $S_u$\\
-                  \bottomrule
-                \end{tabular}
-\end{table}
-
-\section{Theoretical backgroud}
-
-Text in this section. Here is an examplary figure (\autoref{fig:example}).
-
-%    Figure insertion; default placement is top; if the figure occupies
-%    more than 75% of a page, the [p] option should be specified.
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{example.png}
-\caption{Examplary figure}
-\label{fig:example}
-\end{figure}
-
-
-\section{Conclusion}
-
-This is a conclusion.
+\input{parts/conclusion}
 
 %-----------------------------------------------------------------------
 %      Start with acknowledgements here
@@ -233,33 +167,9 @@ This is a conclusion.
 
 \ifdefined\review
 \else
-%\section*{Acknowledgements}
-%
-%This is an example acknowledgements section and should only be included !after! the review process and before publication.
+  \input{parts/acknowledgements.tex}
 
-% The OpenFOAM Journal requires the contributions of all authors to be explicitly stated
-% As noted below, please see \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation.
-% Replace the example authors initials (F.A., S.A) below as appropriate
-
-%Please turn to http://img.mdpi.org/data/contributor-role-instruction.pdf (CRediT taxonomy) for the term explanation.
-
-%\authorcontributions{
-%Conceptualisation, J.S.;
-%methodology, J.S.;
-%software, J.S;
-%validation, J.S. and P.M.;
-%formal analysis, J.S. and P.M.;
-%investigation, J.S.;
-%resources, P.M.;
-%data curation, P.M.;
-%writing---original draft preparation, J.S.;
-%writing---review and editing, J.S. and P.M.;
-%visualisation, J.S.;
-%supervision, P.M.;
-%project administration, P.M.;
-%funding acquisition, P.M.
-%All authors have read and agreed to the published version of the manuscript.
-%}
+  \input{parts/author-contributions.tex}
 \fi
 
 %-----------------------------------------------------------------------
@@ -267,11 +177,8 @@ This is a conclusion.
 %-----------------------------------------------------------------------
 
 % If required, include appendices here
-%\appendix
-%
-%\section{Example appendix}
-%
-%This is an example appendix
+% \appendix
+% \input{parts/appendix.tex}
 
 
 %    Bibliographies can be prepared with BibTeX using IEEEtran style,
@@ -280,49 +187,6 @@ This is a conclusion.
 \bibliography{Bibliography}
 
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-----------------------------------------------------------------------
-%      This is not part of the manuscript itself
-%-----------------------------------------------------------------------
-
-%    Templates for common elements of a journal article;
-
-%    Section headings
-\section{}
-\subsection{}
-
-%    Ordinary theorem and proof
-\begin{theorem}[Optional addition to theorem head]
-% text of theorem
-\end{theorem}
-
-\begin{proof}[Optional replacement proof heading]
-% text of proof
-\end{proof}
-
-%    Figure insertion; default placement is top; if the figure occupies
-%    more than 75% of a page, the [p] option should be specified.
-\begin{figure}
-\includegraphics{filename}
-\caption{text of caption}
-\label{}
-\end{figure}
-
-% Numbered equation
-\begin{equation}
-\end{equation}
-
-% Unnumbered equation
-\begin{equation*}
-\end{equation*}
-
-% Aligned equations
-\begin{align}
-  &  \\
-  &
-\end{align}
 
 %-----------------------------------------------------------------------
 % End of ofj-template.tex

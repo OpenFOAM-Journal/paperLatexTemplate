@@ -2,6 +2,17 @@
 
 This is the official LaTeX Template for the [OpenFOAM Journal](https://journal.openfoam.com/).
 
+## Structure
+
+Add your content in the following files and directories:
+
+- `parts/`: Body of the paper
+  - Apart from the existing files, add files for more sections here.
+- `figures/`: Your figures (create subdirectories, if needed)
+- `ofj-template.tex`: Add title, authors, and include files from `parts/`. Include any additional packages here.
+
+The file `examples.tex` include some commonly used LaTeX snippets.
+
 ## Building
 
 On a Linux system, you can build the template from your terminal:
