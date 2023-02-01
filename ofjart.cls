@@ -600,7 +600,6 @@
   \@topnum\z@ % this prevents figures from falling at the top of page 1
   \@setcopyright
   \thispagestyle{firstpage}% this sets first page specifications
-  \shorttitle
   \ifx\@empty\shortauthors \let\shortauthors\shorttitle
   \else \andify\shortauthors
   \fi
