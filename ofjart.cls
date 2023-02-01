@@ -1111,7 +1111,7 @@
   {\normalfont\centering}}
 \def\section{\@startsection{section}{1}%
   \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
-  {\normalfont\scshape\centering}}
+  {\normalfont\bf\centering}}
 \def\subsection{\@startsection{subsection}{2}%
   \z@{.5\linespacing\@plus.7\linespacing}{-.5em}%
   {\normalfont\bfseries}}
