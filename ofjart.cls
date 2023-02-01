@@ -600,7 +600,7 @@
   \@topnum\z@ % this prevents figures from falling at the top of page 1
   \@setcopyright
   \thispagestyle{firstpage}% this sets first page specifications
-  \uppercasenonmath\shorttitle
+  \shorttitle
   \ifx\@empty\shortauthors \let\shortauthors\shorttitle
   \else \andify\shortauthors
   \fi
@@ -611,7 +611,7 @@
   \toks4{\def\\{ \ignorespaces}}% defend against questionable usage
   \edef\@tempa{%
     \@nx\markboth{\the\toks4
-      \@nx\MakeUppercase{\the\toks@}}{\the\@temptokena}}%
+      \@nx\the\toks@}{\the\@temptokena}}%
   \@tempa
   \endgroup
   \c@footnote\z@
