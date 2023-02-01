@@ -1351,7 +1351,7 @@
 \newcommand{\fps@figure}{tbp}
 \newcommand{\fps@table}{tbp}
 \newcounter{figure}
-\def\@captionheadfont{\scshape}
+\def\@captionheadfont{\bfseries}
 \def\@captionfont{\normalfont}
 \def\ftype@figure{1}
 \def\ext@figure{lof}
