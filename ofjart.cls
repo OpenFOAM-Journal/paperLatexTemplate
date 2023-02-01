@@ -530,7 +530,7 @@
   \def\address##1##2{\begingroup
     \par\addvspace\bigskipamount\indent
     \@ifnotempty{##1}{(\ignorespaces##1\unskip) }%
-    {\scshape\ignorespaces##2}\par\endgroup}%
+    {\ignorespaces##2}\par\endgroup}%
   \def\curraddr##1##2{\begingroup
     \@ifnotempty{##2}{\nobreak\indent\curraddrname
       \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
