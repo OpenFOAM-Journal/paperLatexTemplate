@@ -848,7 +848,7 @@
       \parsep\z@ \@plus\p@
       \let\fullwidthdisplay\relax
     }%
-    \item[\hskip\labelsep\scshape\abstractname.]%
+    \item[\hskip\labelsep\bf\abstractname.]%
 }{%
   \endlist\egroup
   \ifx\@setabstract\relax \@setabstracta \fi
