@@ -813,7 +813,7 @@
   \item\relax
   \author@andify\authors
   \def\\{\protect\linebreak}%
-  \MakeUppercase{\authors}%
+  \authors%
   \ifx\@empty\contribs
   \else
     ,\penalty-3 \space \@setcontribs
