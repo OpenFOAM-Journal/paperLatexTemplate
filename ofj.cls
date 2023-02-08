@@ -112,8 +112,8 @@
   % Software and Manuscript
   \begin{description}
     \item[DOI] \href{https://doi.org/\theDOI}{\@DOI}\\
-    \item[Version(s)] \@OpenFOAMversions\\
-    \item[Repo] \href{\theRepository}{\@Repository}
+    \item[Results with version(s)] \@OpenFOAMversions\\
+    \item[Repository] \href{\theRepository}{\@Repository}
   \end{description}
   \medskip
   \normalsize
