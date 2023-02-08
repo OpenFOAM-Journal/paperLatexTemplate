@@ -530,7 +530,7 @@
   \def\address##1##2{\begingroup
     \par\addvspace\bigskipamount\indent
     \@ifnotempty{##1}{(\ignorespaces##1\unskip) }%
-    {\scshape\ignorespaces##2}\par\endgroup}%
+    {\ignorespaces##2}\par\endgroup}%
   \def\curraddr##1##2{\begingroup
     \@ifnotempty{##2}{\nobreak\indent\curraddrname
       \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
@@ -600,7 +600,6 @@
   \@topnum\z@ % this prevents figures from falling at the top of page 1
   \@setcopyright
   \thispagestyle{firstpage}% this sets first page specifications
-  \uppercasenonmath\shorttitle
   \ifx\@empty\shortauthors \let\shortauthors\shorttitle
   \else \andify\shortauthors
   \fi
@@ -611,7 +610,7 @@
   \toks4{\def\\{ \ignorespaces}}% defend against questionable usage
   \edef\@tempa{%
     \@nx\markboth{\the\toks4
-      \@nx\MakeUppercase{\the\toks@}}{\the\@temptokena}}%
+      \@nx\the\toks@}{\the\@temptokena}}%
   \@tempa
   \endgroup
   \c@footnote\z@
@@ -813,7 +812,7 @@
   \item\relax
   \author@andify\authors
   \def\\{\protect\linebreak}%
-  \MakeUppercase{\authors}%
+  \authors%
   \ifx\@empty\contribs
   \else
     ,\penalty-3 \space \@setcontribs
@@ -848,7 +847,7 @@
       \parsep\z@ \@plus\p@
       \let\fullwidthdisplay\relax
     }%
-    \item[\hskip\labelsep\scshape\abstractname.]%
+    \item[\hskip\labelsep\bf\abstractname.]%
 }{%
   \endlist\egroup
   \ifx\@setabstract\relax \@setabstracta \fi
@@ -1111,7 +1110,7 @@
   {\normalfont\centering}}
 \def\section{\@startsection{section}{1}%
   \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
-  {\normalfont\scshape\centering}}
+  {\normalfont\bf\centering}}
 \def\subsection{\@startsection{subsection}{2}%
   \z@{.5\linespacing\@plus.7\linespacing}{-.5em}%
   {\normalfont\bfseries}}
@@ -1351,7 +1350,7 @@
 \newcommand{\fps@figure}{tbp}
 \newcommand{\fps@table}{tbp}
 \newcounter{figure}
-\def\@captionheadfont{\scshape}
+\def\@captionheadfont{\bfseries}
 \def\@captionfont{\normalfont}
 \def\ftype@figure{1}
 \def\ext@figure{lof}
