@@ -610,7 +610,7 @@
   \toks4{\def\\{ \ignorespaces}}% defend against questionable usage
   \edef\@tempa{%
     \@nx\markboth{\the\toks4
-      \@nx\the\toks@}{\the\@temptokena}}%
+      \@nx{\the\toks@}}{\the\@temptokena}}%
   \@tempa
   \endgroup
   \c@footnote\z@
