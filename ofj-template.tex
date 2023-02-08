@@ -51,6 +51,10 @@
 \usepackage{orcidlink}
 \usepackage{cite}
 
+% hyperref should be loaded last, to prevent conflicts with other packages
+% For example, to prevent this warning: https://tex.stackexchange.com/q/16268/27863
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+
 \newcommand{\authorcontributions}[1]{%
 \vspace{6pt}\noindent{\fontsize{9}{11.2}\selectfont\textbf{Author Contributions:} {#1}\par}}
 

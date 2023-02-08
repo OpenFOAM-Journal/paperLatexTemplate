@@ -51,7 +51,6 @@
 
 \RequirePackage[margin=2.5cm]{geometry}
 \RequirePackage{booktabs}
-\RequirePackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
 \RequirePackage{algorithmic} %Typesetting complex algorithmic constructs
