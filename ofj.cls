@@ -110,11 +110,11 @@
   \bigskip
 
   % Software and Manuscript
-  \qquad\quad\begin{tabular}{ll}
-    \footnotesize\textbf{DOI}: & \href{https://doi.org/\theDOI}{\@DOI}\\
-    \footnotesize\textbf{Version(s)}: & \@OpenFOAMversions\\
-    \footnotesize\textbf{Repo}: & \href{\theRepository}{\@Repository}
-  \end{tabular}
+  \begin{description}
+    \item[DOI] \href{https://doi.org/\theDOI}{\@DOI}\\
+    \item[Version(s)] \@OpenFOAMversions\\
+    \item[Repo] \href{\theRepository}{\@Repository}
+  \end{description}
   \medskip
   \normalsize
   \dimen@34\p@ \advance\dimen@-\baselineskip
