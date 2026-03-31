@@ -15,10 +15,11 @@ We shall consider the specific transport property $\Q$ and note that its spatial
     \ddt{}(\rho \Q) + \div(\rho \Q \U) - \Gamma_{\Q}\laplacian\Q - S_\Q(\Q) = 0.
     \label{eq:genTransEq}
 \end{align}
-Herein, $\Q=\Q(\xt)$ is an arbitrary general intensive physical quantity, e.g., a fluid property (scalar or tensor of any rank). Thus, \autoref{eq:genTransEq} is often referred to as a generic transport equation.
+Herein, $\Q=\Q(\xt)$ is an arbitrary general intensive physical quantity, e.g., a fluid property (scalar or tensor of any rank). Thus, Eqn.~\ref{eq:genTransEq} is often referred to as a generic transport equation.
 
-\OF (Open Field Operation And Manipulation) is a flexible and mature C++ Class Library for Computational Continuum Mechanics (CCM) and Multiphysics. Its Object-Oriented-Programming (OOP) paradigm enables to \emph{mimic data types and basic operations} of CCM using top-level syntax as close as possible to the conventional mathematical notation \emph{for tensors and partial differential equations}:
-\begin{lstlisting}[emph={ddt,div,laplacian}]
+\OF (Open Field Operation And Manipulation) is a flexible and mature C++ Class Library for Computational Continuum Mechanics (CCM) and Multiphysics. Its Object-Oriented-Programming (OOP) paradigm enables to \emph{mimic data types and basic operations} of CCM using top-level syntax as close as possible to the conventional mathematical notation \emph{for tensors and partial differential equations}, as shown in Lst.~\ref{lstlisting:code}.
+
+\begin{lstlisting}[emph={ddt,div,laplacian}, caption={code listing caption}, label=lstlisting:code]
 solve
 (
   fvm::ddt(rho,Phi)
@@ -28,7 +29,7 @@ solve
   Sphi
 );
 \end{lstlisting}
-Besides providing \OF code itself, spatial and temporal discretisation of \autoref{eq:genTransEq} can also be described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see \autoref{tab:FiniteVolumeNotation}.
+Besides providing \OF code itself, spatial and temporal discretisation of Eqn.~\ref{eq:genTransEq} can also be described in a precise and concise manner using the finite-volume notation\, \cite{Weller1998} - see Tab.~\ref{tab:FiniteVolumeNotation}.
 
 \begin{table}
         \caption{Finite Volume Notation}
