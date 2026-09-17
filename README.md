@@ -45,6 +45,18 @@ make review
 
 which enables double line spacing and excludes some identifying information (authors and affiliations, repository, acknowledgements). In case you rename `ofj-template.tex`, you need to also adjust the name of the file included in `ofj-template-review.tex`.
 
+## Syntax Hints
+
+The following are some hints in the syntax. Find more examples and guidelines in the files `examples.tex` and in the provided files in `parts/`.
+
+### References
+
+Figures, equations, tables, and listings define a `\label{}` after the respective `\caption{}`, such as `\label{fig:example}`.
+The template uses the [cleveref](https://ctan.org/pkg/cleveref) package to automatically format these references according to the journal guidelines.
+Instead of hard-coding `Figure~\ref{fig:example}`, use `\cref{fig:example}`.
+In the beginning of a sentence, use `\Cref{fig:example}` for the full expansion to `Figure 1`.
+For multiple references, specify them both as arguments in the same command: `\cref{fig:example1,fig:example2}`.
+
 ## Contributing
 
 Feel free to [open an issue](https://github.com/OpenFOAM-Journal/paperLatexTemplate/issues) explaining any problems or feature requests. Ideally, it would really help if you could directly [propose changes in a pull request](https://github.com/OpenFOAM-Journal/paperLatexTemplate/pulls) from your fork ([read how](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)). Describe your contribution in detail in the PR and try to use concise and descriptive commit messages. To keep the history clean, squash multiple related commits into one and update your branch with a force-push.

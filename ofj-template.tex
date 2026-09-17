@@ -56,6 +56,18 @@
 % For example, to prevent this warning: https://tex.stackexchange.com/q/16268/27863
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 
+% cleveref requires that it is loaded after hyperref
+\usepackage[nameinlink]{cleveref}
+\crefname{equation}{Eqn.}{Eqns.}
+\Crefname{equation}{Equation}{Equations}
+\creflabelformat{equation}{#2#1#3}   % drop the parentheses around equation numbers
+\crefname{figure}{Fig.}{Figs.}
+\Crefname{figure}{Figure}{Figures}
+\crefname{table}{Tab.}{Tabs.}
+\Crefname{table}{Table}{Tables}
+\crefname{listing}{Lst.}{Lsts.}
+\Crefname{listing}{Listing}{Listings}
+
 \newcommand{\authorcontributions}[1]{%
 \vspace{6pt}\noindent{\fontsize{9}{11.2}\selectfont\textbf{Author Contributions:} {#1}\par}}
 
