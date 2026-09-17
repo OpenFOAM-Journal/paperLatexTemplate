@@ -47,6 +47,48 @@ which enables double line spacing and excludes some identifying information (aut
 
 The template includes a declaration on the use of artificial intelligence in `parts/aiDeclaration.tex`. This declaration is mandatory for all submissions, including when no AI tools were used. It is deliberately retained in the review version, as reviewers need it to assess the manuscript and the accompanying code, so keep it free of any information that identifies you. See the guidance comments in the file, and the journal's author guidelines, for what to declare.
 
+## Checking Style and Conventions
+
+The template ships with `checkStyle.py`, a dependency-free script that checks a
+manuscript against the conventions described in this README and in the template
+files. Run it from the manuscript directory with
+
+```shell
+make check
+```
+
+or directly, for example
+
+```shell
+python3 checkStyle.py --strict          # treat warnings as errors
+python3 checkStyle.py --check-log       # also parse the LaTeX .log files
+python3 checkStyle.py --list-rules      # print the rule table
+```
+
+It reports two severities. **Errors** are unambiguous: leftover placeholders, a
+missing declaration on the use of artificial intelligence, a cross-reference
+written as `Figure~\ref{}` instead of `Fig.~\ref{}`, author information that
+would leak into the double-blind review version. **Warnings** encode a
+preference that may legitimately not apply to your manuscript, such as spelling
+variants or float placement; read them and use your judgement. The script exits
+non-zero if there is at least one error.
+
+Every rule is documented, with the place in the template it is derived from, in
+the comment block at the top of `checkStyle.py`. If a rule is wrong or fires on
+something legitimate, silence it for one line with
+
+```latex
+Figure~\ref{fig:example} % ofj-check: ignore REF001
+```
+
+or for a whole run with `--ignore REF001` (a group prefix such as `--ignore REF`
+also works), and please
+[open an issue](https://github.com/OpenFOAM-Journal/paperLatexTemplate/issues).
+
+Note that running the check on the *unmodified* template reports a number of
+errors by design: the placeholder title, authors, repository and body text are
+exactly what the script is meant to catch.
+
 ## Contributing
 
 Feel free to [open an issue](https://github.com/OpenFOAM-Journal/paperLatexTemplate/issues) explaining any problems or feature requests. Ideally, it would really help if you could directly [propose changes in a pull request](https://github.com/OpenFOAM-Journal/paperLatexTemplate/pulls) from your fork ([read how](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)). Describe your contribution in detail in the PR and try to use concise and descriptive commit messages. To keep the history clean, squash multiple related commits into one and update your branch with a force-push.
