@@ -38,3 +38,49 @@
   &  \\
   &
 \end{align}
+
+
+% --- In case you use listings please use either of these examples as guidelines ---
+
+% --- Example 1: Short Listing (No Page Breaks) ---
+% For short code snippets where you want to prevent awkward page breaks,
+% wrap the listing in a minipage.
+% Note: If the listing does not fit in the remaining space on the page,
+% the minipage will overflow rather than break. The 'float' option is a good alternative.
+% Include a 'caption' if you want the listing to be numbered (e.g., "Listing 1") and referenced.
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={A short OpenFOAM snippet kept on a single page.}, label={lst:short_snippet}]
+// Calculate the flux
+surfaceScalarField phi
+(
+    "phi",
+    linearInterpolate(U) & mesh.Sf()
+);
+\end{lstlisting}
+\end{minipage}
+
+% --- Example 2: Long Listing (Allows Page Breaks) ---
+% For longer code blocks that might span across multiple pages,
+% DO NOT use a minipage. The listings package will handle the page
+% breaks naturally. Again, include a 'caption' if you want
+% the listing to be numbered and referenced.
+\begin{lstlisting}[caption={A longer OpenFOAM implementation that can safely break across pages.}, label={lst:piso_loop}]
+// Main PISO loop
+for (int corr=0; corr<nCorr; corr++)
+{
+    volScalarField rAU(1.0/UEqn.A());
+    volVectorField HbyA(constrainHbyA(rAU*UEqn.H(), U, p));
+
+    surfaceScalarField phiHbyA
+    (
+        "phiHbyA",
+        fvc::flux(HbyA)
+      + fvc::interpolate(rAU)*fvc::ddtCorr(U, phi)
+    );
+
+    // Adjust pressure reference...
+    adjustPhi(phiHbyA, U, p);
+
+    // ... remainder of the loop ...
+}
+\end{lstlisting}
