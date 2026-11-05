@@ -1,0 +1,18 @@
+% Negative sample: same body text as the current template, but plain article class.
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,graphicx,booktabs,listings,xspace}
+\usepackage{tensorNotation}
+\usepackage{finiteVolumeNotation}
+\usepackage{hyperref}
+\newcommand{\OF}[0]{OpenFOAM\textsuperscript{\textregistered}\xspace}
+\title{An OpenFOAM Paper Written Without the Template}
+\author{Maria Jersey and John Smith}
+\begin{document}
+\maketitle
+\input{parts/abstract.tex}
+\input{parts/introduction}
+\input{parts/section}
+\input{parts/conclusion}
+\bibliographystyle{plain}
+\bibliography{Bibliography}
+\end{document}

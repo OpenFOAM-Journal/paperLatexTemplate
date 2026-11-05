@@ -1,0 +1,2 @@
+# Runtime dependencies of ofj-check (see docs/INSTALL.md)
+pdfplumber>=0.10

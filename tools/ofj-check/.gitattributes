@@ -1,0 +1,6 @@
+# The launcher and scripts run in WSL/Linux: keep Unix line endings in every checkout.
+ofj-check text eol=lf
+*.sh      text eol=lf
+*.py      text eol=lf
+# Reference PDFs are test data, not build output.
+*.pdf     binary
