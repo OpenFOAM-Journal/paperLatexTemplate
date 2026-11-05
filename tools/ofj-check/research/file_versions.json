@@ -1,0 +1,821 @@
+{
+ "amsart.cls": [
+  {
+   "blob": "65fa489a11ca132ec7f93294e46076d3a925389c",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": null,
+   "until_commit": null,
+   "norm": "632c785a32f9be31",
+   "lines": 1918
+  }
+ ],
+ "finiteVolumeNotation.sty": [
+  {
+   "blob": "5736ed5af59bc15bf6cffc87e6be8167584f4787",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": null,
+   "until_commit": null,
+   "norm": "02549d4b25b1ee7a",
+   "lines": 208
+  }
+ ],
+ "jams-l.cls": [
+  {
+   "blob": "4f9e95800031ce34d2d6fa61892e104c0a89fbe0",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": null,
+   "until_commit": null,
+   "norm": "317ba022690aca3d",
+   "lines": 81
+  }
+ ],
+ "ofj-template.tex": [
+  {
+   "blob": "47af0b2ce117a88f7a585cabdfb68ac67c8e5dc1",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": "2021-04-28",
+   "until_commit": "14fbeaa",
+   "norm": "b4e19fa49b12a518",
+   "lines": 266
+  },
+  {
+   "blob": "406add8166e71f637a17f37d81165e2b63499bfb",
+   "from": "2021-04-28",
+   "from_commit": "14fbeaa",
+   "subject": "Philip changes based on comments in https://docs.google.com/document/d/1XoSzDqh01A0AHemQIdKsVGW_4I0K9mwDD1AfNVUnv4s/edit",
+   "until": "2021-05-10",
+   "until_commit": "fff4a36",
+   "norm": "0e0cf7f02e21b439",
+   "lines": 279
+  },
+  {
+   "blob": "0dbb49d681acb4fab4f0c17ac111daf79c4cde50",
+   "from": "2021-05-10",
+   "from_commit": "fff4a36",
+   "subject": "Add author contributions",
+   "until": "2021-05-14",
+   "until_commit": "5c6eb0f",
+   "norm": "2e4cb7877bbb0dc9",
+   "lines": 305
+  },
+  {
+   "blob": "835cd9ca80ff6b7ee6ee5b51e77b9585dced8238",
+   "from": "2021-05-14",
+   "from_commit": "5c6eb0f",
+   "subject": "JN: updated some parts of tex file",
+   "until": "2021-06-08",
+   "until_commit": "46b173e",
+   "norm": "b81e8de5dba6070f",
+   "lines": 350
+  },
+  {
+   "blob": "bbecd6ddc8be5bd6a8c07a051a0b9d34556f8a0b",
+   "from": "2021-06-08",
+   "from_commit": "46b173e",
+   "subject": "modified euquation numbers and added some comments",
+   "until": "2021-06-14",
+   "until_commit": "bcf80d5",
+   "norm": "b0ee85350d77f324",
+   "lines": 350
+  },
+  {
+   "blob": "e4b0dfda732889a7c245a17c68d4b1b8aa988134",
+   "from": "2021-06-14",
+   "from_commit": "bcf80d5",
+   "subject": "removed comments",
+   "until": "2021-06-15",
+   "until_commit": "f9ea1bf",
+   "norm": "a147639fd87dc8f6",
+   "lines": 302
+  },
+  {
+   "blob": "8be77acb96c5f0fa878a4b7a1a1fbbef548a480b",
+   "from": "2021-06-15",
+   "from_commit": "f9ea1bf",
+   "subject": "Correct Copyright Footer",
+   "until": "2021-07-27",
+   "until_commit": "e57e6af",
+   "norm": "0f6469f38c90a125",
+   "lines": 302
+  },
+  {
+   "blob": "db8d5860dedc6b63948542af00c66e578fefd942",
+   "from": "2021-07-27",
+   "from_commit": "e57e6af",
+   "subject": "Author Contributions",
+   "until": "2021-07-27",
+   "until_commit": "eb037cd",
+   "norm": "df696ff0379d937c",
+   "lines": 303
+  },
+  {
+   "blob": "2499fca0a131cd7df18c6ea74b6b301609be4366",
+   "from": "2021-07-27",
+   "from_commit": "eb037cd",
+   "subject": "Author Contributions 2",
+   "until": "2021-09-06",
+   "until_commit": "ad8408f",
+   "norm": "1646172674bcbc03",
+   "lines": 303
+  },
+  {
+   "blob": "ab72a1254595f903c843217577e9038218903f90",
+   "from": "2021-09-06",
+   "from_commit": "ad8408f",
+   "subject": "corresponding author",
+   "until": "2021-09-06",
+   "until_commit": "ba1df50",
+   "norm": "4ac0e9810bfac906",
+   "lines": 311
+  },
+  {
+   "blob": "5862fb477b41ef6eda8948e6af807d96867c129f",
+   "from": "2021-09-06",
+   "from_commit": "ba1df50",
+   "subject": "Add numeral superscripts to authors and addresses",
+   "until": "2021-09-07",
+   "until_commit": "bdfba4c",
+   "norm": "1b1ff6f4a6224bb7",
+   "lines": 312
+  },
+  {
+   "blob": "1d2899059bb68f5237ce536e420fcaf3f03a46a2",
+   "from": "2021-09-07",
+   "from_commit": "bdfba4c",
+   "subject": "Change the approach to indicate the corresponding author; also remove all trailing whitespace",
+   "until": "2021-11-22",
+   "until_commit": "7aad18e",
+   "norm": "90712e2883c11bbd",
+   "lines": 311
+  },
+  {
+   "blob": "9df9b613332aefecd587a371b9a13283c0cd44eb",
+   "from": "2021-11-22",
+   "from_commit": "7aad18e",
+   "subject": "small changes",
+   "until": "2022-01-14",
+   "until_commit": "1d9ee46",
+   "norm": "57a41092e9345d9a",
+   "lines": 308
+  },
+  {
+   "blob": "9d309bad09f21bd1f256405bbb0a426b5c097334",
+   "from": "2022-01-14",
+   "from_commit": "1d9ee46",
+   "subject": "Added example of orcidlink",
+   "until": "2022-01-17",
+   "until_commit": "6b6f3b2",
+   "norm": "fa36ca47f8023ea2",
+   "lines": 310
+  },
+  {
+   "blob": "3cdceebafc9db1f8e95c29adabb3d4fc9af95391",
+   "from": "2022-01-17",
+   "from_commit": "6b6f3b2",
+   "subject": "Add keywords to ofj-template.tex",
+   "until": "2022-01-20",
+   "until_commit": "b5edfcf",
+   "norm": "3037823cc0986668",
+   "lines": 314
+  },
+  {
+   "blob": "9d309bad09f21bd1f256405bbb0a426b5c097334",
+   "from": "2022-01-20",
+   "from_commit": "b5edfcf",
+   "subject": "Remove keywords as per the committee decision",
+   "until": "2022-03-02",
+   "until_commit": "62dec8d",
+   "norm": "fa36ca47f8023ea2",
+   "lines": 310
+  },
+  {
+   "blob": "168b2c185f1d621eddfd5753e401975be0fd8325",
+   "from": "2022-03-02",
+   "from_commit": "62dec8d",
+   "subject": "Update the copyright 4 Authors and CC Link",
+   "until": "2022-03-02",
+   "until_commit": "f532bdd",
+   "norm": "f8180bc12435a4e7",
+   "lines": 309
+  },
+  {
+   "blob": "0309f602e79c3b855544ff1424013ce41b7ac300",
+   "from": "2022-03-02",
+   "from_commit": "f532bdd",
+   "subject": "As per the suggestion of Simon Wagner, I have added the \\usepackage{cite} so that references when cited are ordered correctly",
+   "until": "2022-11-08",
+   "until_commit": "d282c75",
+   "norm": "eabea25ff3d60fc3",
+   "lines": 310
+  },
+  {
+   "blob": "37a478b62f08f547a8ad265392ad95aebcc59b41",
+   "from": "2022-11-08",
+   "from_commit": "d282c75",
+   "subject": "Merge pull request #10 from MakisH/footnotes-numbering",
+   "until": "2022-12-27",
+   "until_commit": "18e3bbf",
+   "norm": "7315f5c561f9c00e",
+   "lines": 309
+  },
+  {
+   "blob": "f6d8f69967312e02ddc1d33a79404ea17895088f",
+   "from": "2022-12-27",
+   "from_commit": "18e3bbf",
+   "subject": "Merge pull request #21 from MakisH/fix-18",
+   "until": "2022-12-27",
+   "until_commit": "71c68fa",
+   "norm": "524b5694a7055000",
+   "lines": 309
+  },
+  {
+   "blob": "44f6912826a5914b0785afe4d381b00e8c24ab6f",
+   "from": "2022-12-27",
+   "from_commit": "71c68fa",
+   "subject": "Merge pull request #17 from MakisH/suggest-autoref",
+   "until": "2022-12-27",
+   "until_commit": "e88d246",
+   "norm": "00e0203ab8c5baf8",
+   "lines": 309
+  },
+  {
+   "blob": "79fcc607b9cdbe29585caede5beddb039f68353d",
+   "from": "2022-12-27",
+   "from_commit": "e88d246",
+   "subject": "Merge pull request #12 from MakisH/fix-8",
+   "until": "2023-01-30",
+   "until_commit": "ffe4a16",
+   "norm": "36db1a07babc0867",
+   "lines": 325
+  },
+  {
+   "blob": "3519864e7bc46945c0de1d484da15269b04a9faf",
+   "from": "2023-01-30",
+   "from_commit": "ffe4a16",
+   "subject": "Merge pull request #24 from MakisH/fix-22",
+   "until": "2023-01-30",
+   "until_commit": "4a3819b",
+   "norm": "bc6a400cf16ef627",
+   "lines": 326
+  },
+  {
+   "blob": "12bbb6de617a8102e83cce46d6af299d78189679",
+   "from": "2023-01-30",
+   "from_commit": "4a3819b",
+   "subject": "Merge pull request #25 from MakisH/fix-9",
+   "until": "2023-01-30",
+   "until_commit": "f004fab",
+   "norm": "2066dd835365b3e7",
+   "lines": 329
+  },
+  {
+   "blob": "56d21d36dab143d723eb19fb08229da0f683aa03",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": "2023-02-08",
+   "until_commit": "ff67b8b",
+   "norm": "f181223ceea3ce1a",
+   "lines": 193
+  },
+  {
+   "blob": "3b3fd0220d7881a721b3962e280523422e590237",
+   "from": "2023-02-08",
+   "from_commit": "ff67b8b",
+   "subject": "Merge pull request #28 from MakisH/fix-2",
+   "until": "2023-02-08",
+   "until_commit": "6679db8",
+   "norm": "2756eba5109c6168",
+   "lines": 190
+  },
+  {
+   "blob": "a716b853bd7ad3ef609bdab60cf3e9f3acebb514",
+   "from": "2023-02-08",
+   "from_commit": "6679db8",
+   "subject": "Merge pull request #32 from OpenFOAM-Journal/fix-clarify-openfoam-versions",
+   "until": "2023-02-09",
+   "until_commit": "1831aaf",
+   "norm": "c05094cf2459ead5",
+   "lines": 193
+  },
+  {
+   "blob": "80feb00f66ea3583aeaa5e240381b845f95b0db2",
+   "from": "2023-02-09",
+   "from_commit": "1831aaf",
+   "subject": "Merge pull request #36 from MakisH/move-hyperref",
+   "until": "2023-02-25",
+   "until_commit": "3f9c31c",
+   "norm": "76510d9246b4ecb5",
+   "lines": 197
+  },
+  {
+   "blob": "63f732dccac654e0dedf4be7b72dbeca3bcddc6d",
+   "from": "2023-02-25",
+   "from_commit": "3f9c31c",
+   "subject": "Merge pull request #37 from MakisH/autoref-labels",
+   "until": "2023-02-26",
+   "until_commit": "0fc4ddf",
+   "norm": "adb6b2b40daf5332",
+   "lines": 202
+  },
+  {
+   "blob": "80acfd05e6f1868f6cf9c1815c1563577e948027",
+   "from": "2023-02-26",
+   "from_commit": "0fc4ddf",
+   "subject": "Merge pull request #39 from MakisH/xspace",
+   "until": "2023-04-30",
+   "until_commit": "4f17267",
+   "norm": "d4ddbfa06d87230c",
+   "lines": 203
+  },
+  {
+   "blob": "f513ec6bc664fd8ed7b91391a93c4a364a49e7c5",
+   "from": "2023-04-30",
+   "from_commit": "4f17267",
+   "subject": "Merge pull request #41 from MakisH/fix-40",
+   "until": "2025-01-11",
+   "until_commit": "431cc52",
+   "norm": "8c77b6babd7e0b8f",
+   "lines": 225
+  },
+  {
+   "blob": "c17d199baca894505c47a8623852cf56be0329ed",
+   "from": "2025-01-11",
+   "from_commit": "431cc52",
+   "subject": "Merge pull request #42 from OpenFOAM-Journal/philipc",
+   "until": "2026-01-02",
+   "until_commit": "66b2f6a",
+   "norm": "aba39a67db565a3d",
+   "lines": 225
+  },
+  {
+   "blob": "79782be84c93b504d715fdff61f2952178fc9a83",
+   "from": "2026-01-02",
+   "from_commit": "66b2f6a",
+   "subject": "Update Copyright to 2026",
+   "until": "2026-03-31",
+   "until_commit": "cd2b7f2",
+   "norm": "3c1e0b757482e150",
+   "lines": 225
+  },
+  {
+   "blob": "cac9e6dd6629b831e58fa5676b76293f5d939562",
+   "from": "2026-03-31",
+   "from_commit": "cd2b7f2",
+   "subject": "Merge pull request #50 from jmnobrega/master",
+   "until": null,
+   "until_commit": null,
+   "norm": "e8215a5babc3f315",
+   "lines": 220
+  }
+ ],
+ "ofj.cls": [
+  {
+   "blob": "ce7a73f80741c9dd87486ceb5108dd9dd52c9391",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": "2021-04-28",
+   "until_commit": "14fbeaa",
+   "norm": "212302997870c70e",
+   "lines": 131
+  },
+  {
+   "blob": "af9190643f0b240ad24d7c70b9591e392584778c",
+   "from": "2021-04-28",
+   "from_commit": "14fbeaa",
+   "subject": "Philip changes based on comments in https://docs.google.com/document/d/1XoSzDqh01A0AHemQIdKsVGW_4I0K9mwDD1AfNVUnv4s/edit",
+   "until": "2021-08-27",
+   "until_commit": "b4c58cd",
+   "norm": "786edd207ce2023c",
+   "lines": 131
+  },
+  {
+   "blob": "dcaeaac7a7f3b722c33d2ca0b648fd4e5b2ebee4",
+   "from": "2021-08-27",
+   "from_commit": "b4c58cd",
+   "subject": "Removed cloured boxes from hyperlinks",
+   "until": "2021-08-27",
+   "until_commit": "f551e8b",
+   "norm": "3e04dd4049e873c7",
+   "lines": 131
+  },
+  {
+   "blob": "145caf4e1d9602352251c5fca186bb302d38c298",
+   "from": "2021-08-27",
+   "from_commit": "f551e8b",
+   "subject": "Reduce the size of the margins",
+   "until": "2021-09-06",
+   "until_commit": "d78a6e3",
+   "norm": "706f4f9c5ac40485",
+   "lines": 132
+  },
+  {
+   "blob": "fc9a181d9563267fc967cc9de604122b8b95e624",
+   "from": "2021-09-06",
+   "from_commit": "d78a6e3",
+   "subject": "Add more vertical space before the title, when authors and abstract are present",
+   "until": "2021-11-22",
+   "until_commit": "7aad18e",
+   "norm": "8e92a9ff2482a938",
+   "lines": 133
+  },
+  {
+   "blob": "145caf4e1d9602352251c5fca186bb302d38c298",
+   "from": "2021-11-22",
+   "from_commit": "7aad18e",
+   "subject": "small changes",
+   "until": "2022-05-18",
+   "until_commit": "029028a",
+   "norm": "706f4f9c5ac40485",
+   "lines": 132
+  },
+  {
+   "blob": "ac85db3ba13a00a46074ace5030db75731505342",
+   "from": "2022-05-18",
+   "from_commit": "029028a",
+   "subject": "vector logo",
+   "until": "2023-02-08",
+   "until_commit": "fc059af",
+   "norm": "4070c6a5f7acbd3d",
+   "lines": 132
+  },
+  {
+   "blob": "121b0c2c1622f284300de08792ca48ec8805c9e5",
+   "from": "2023-02-08",
+   "from_commit": "fc059af",
+   "subject": "Merge pull request #27 from MakisH/fix-3",
+   "until": "2023-02-08",
+   "until_commit": "6e52400",
+   "norm": "b0f02282a876bb1c",
+   "lines": 132
+  },
+  {
+   "blob": "3e652e2430b71bb324f1a9119d4554381d77ad40",
+   "from": "2023-02-08",
+   "from_commit": "6e52400",
+   "subject": "Merge pull request #33 from MakisH/extend-32",
+   "until": "2023-02-09",
+   "until_commit": "1831aaf",
+   "norm": "db5d66392ff44188",
+   "lines": 132
+  },
+  {
+   "blob": "89ed73cd6262897dd1bd228607f77394ab4483a7",
+   "from": "2023-02-09",
+   "from_commit": "1831aaf",
+   "subject": "Merge pull request #36 from MakisH/move-hyperref",
+   "until": null,
+   "until_commit": null,
+   "norm": "10710b76d5eb8ca0",
+   "lines": 131
+  }
+ ],
+ "ofjart.cls": [
+  {
+   "blob": "38b76bd87ffd75451d4f7bd46e71b5b5351b8b63",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": "2021-08-30",
+   "until_commit": "15fc5c2",
+   "norm": "932c26939c446258",
+   "lines": 1924
+  },
+  {
+   "blob": "72340814bfb523ad42c4ab82d107d0042a968e53",
+   "from": "2021-08-30",
+   "from_commit": "15fc5c2",
+   "subject": "format change from letter to a4",
+   "until": "2021-11-22",
+   "until_commit": "7aad18e",
+   "norm": "dabf57375a2edae6",
+   "lines": 1924
+  },
+  {
+   "blob": "fdad990a2a0d7248c1562a70726d955fc8619a9b",
+   "from": "2021-11-22",
+   "from_commit": "7aad18e",
+   "subject": "small changes",
+   "until": "2022-05-04",
+   "until_commit": "48b3c92",
+   "norm": "45d03cb279d75655",
+   "lines": 1927
+  },
+  {
+   "blob": "50c2b3b45a3f320f0ba59653ece2d91beb94c94c",
+   "from": "2022-05-04",
+   "from_commit": "48b3c92",
+   "subject": "added ISSN; added section entry",
+   "until": "2023-01-30",
+   "until_commit": "d69512b",
+   "norm": "fd58d81da5b365e6",
+   "lines": 1927
+  },
+  {
+   "blob": "d2f0c29df196176aa8d88b369ee9c75e8f2b1b44",
+   "from": "2023-01-30",
+   "from_commit": "d69512b",
+   "subject": "Merge pull request #20 from MakisH/fix-19",
+   "until": "2023-02-08",
+   "until_commit": "3178e65",
+   "norm": "36720f9f1b4e4419",
+   "lines": 1926
+  },
+  {
+   "blob": "30e05bc809749e4bde0c7e8c956febfad3a0a0b1",
+   "from": "2023-02-08",
+   "from_commit": "3178e65",
+   "subject": "Merge pull request #30 from MakisH/fix-29",
+   "until": "2023-02-09",
+   "until_commit": "53bb7e5",
+   "norm": "8d0795a8f22a589f",
+   "lines": 1925
+  },
+  {
+   "blob": "528030f7895088cacb5d3920a801095f497a88ec",
+   "from": "2023-02-09",
+   "from_commit": "53bb7e5",
+   "subject": "Merge pull request #35 from MakisH/fix-token-scope",
+   "until": null,
+   "until_commit": null,
+   "norm": "a8cc8e0b7003da5a",
+   "lines": 1925
+  }
+ ],
+ "tensorNotation.sty": [
+  {
+   "blob": "f83fac44795b887da2f5a9a2287297ce563fd402",
+   "from": "2021-04-28",
+   "from_commit": "b1d669b",
+   "subject": "Initial commit: added comment and track changes instructions",
+   "until": "2022-11-08",
+   "until_commit": "3b822f1",
+   "norm": "28a934734fc7841c",
+   "lines": 586
+  },
+  {
+   "blob": "a458a607986755d0720d242b786b83238f481ecd",
+   "from": "2022-11-08",
+   "from_commit": "3b822f1",
+   "subject": "Merge pull request #7 from MakisH/remove-mnsymbol",
+   "until": null,
+   "until_commit": null,
+   "norm": "1c601df0bb778ac1",
+   "lines": 511
+  }
+ ],
+ "Bibliography.bib": [
+  {
+   "blob": "8f5b458257b6643a704b584eca6d9f3f83023fbc",
+   "from": "2021-04-28",
+   "from_commit": "14fbeaa",
+   "subject": "Philip changes based on comments in https://docs.google.com/document/d/1XoSzDqh01A0AHemQIdKsVGW_4I0K9mwDD1AfNVUnv4s/edit",
+   "until": "2021-06-08",
+   "until_commit": "46b173e",
+   "norm": "ff014a411225947f",
+   "lines": 11
+  },
+  {
+   "blob": "d5db992f66fc49fb6e06e439c8bbb714069f5cc8",
+   "from": "2021-06-08",
+   "from_commit": "46b173e",
+   "subject": "modified euquation numbers and added some comments",
+   "until": null,
+   "until_commit": null,
+   "norm": "17252887b7151ef9",
+   "lines": 13
+  }
+ ],
+ "orcidlink.sty": [
+  {
+   "blob": "bfc397ce249ea40ebfba5edfa73351c4b4a6bfb1",
+   "from": "2022-01-14",
+   "from_commit": "1d9ee46",
+   "subject": "Added example of orcidlink",
+   "until": "2023-02-09",
+   "until_commit": "1831aaf",
+   "norm": "4ebeae3cba0ea5d4",
+   "lines": 62
+  },
+  {
+   "blob": "6cbb80bb22aade1e7df884493e1f4a72692b267f",
+   "from": "2023-02-09",
+   "from_commit": "1831aaf",
+   "subject": "Merge pull request #36 from MakisH/move-hyperref",
+   "until": null,
+   "until_commit": null,
+   "norm": "08985017f678659a",
+   "lines": 63
+  }
+ ],
+ "Makefile": [
+  {
+   "blob": "68957cd5fdeb92fbb16bf2037cc56f9dfa9f7447",
+   "from": "2022-11-08",
+   "from_commit": "8647056",
+   "subject": "Merge pull request #4 from MakisH/add-makefile",
+   "until": "2022-12-27",
+   "until_commit": "e88d246",
+   "norm": "3bd645a02fd1e702",
+   "lines": 14
+  },
+  {
+   "blob": "28e6b418541be01e9a3773cd31a7c05ce9d1fcf8",
+   "from": "2022-12-27",
+   "from_commit": "e88d246",
+   "subject": "Merge pull request #12 from MakisH/fix-8",
+   "until": "2023-01-30",
+   "until_commit": "4a3819b",
+   "norm": "ed7604c80a511fae",
+   "lines": 18
+  },
+  {
+   "blob": "6740d6f1cbbabd66d77726eb4c29a39e2604ce63",
+   "from": "2023-01-30",
+   "from_commit": "4a3819b",
+   "subject": "Merge pull request #25 from MakisH/fix-9",
+   "until": null,
+   "until_commit": null,
+   "norm": "3f17f186896035b9",
+   "lines": 28
+  }
+ ],
+ "ofj-template-review.tex": [
+  {
+   "blob": "a2283fea13ed941143b12f2440bc3597278fdd1c",
+   "from": "2022-12-27",
+   "from_commit": "e88d246",
+   "subject": "Merge pull request #12 from MakisH/fix-8",
+   "until": null,
+   "until_commit": null,
+   "norm": "ea9269a7f5997843",
+   "lines": 7
+  }
+ ],
+ "examples.tex": [
+  {
+   "blob": "275947a11ea05246463070c9f1dd53be24fd3102",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": null,
+   "until_commit": null,
+   "norm": "30b9db3ec29e1ec6",
+   "lines": 40
+  }
+ ],
+ "parts/abstract.tex": [
+  {
+   "blob": "52bae20a737958becf3bfb1e617c3563493baafa",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": null,
+   "until_commit": null,
+   "norm": "2c758b3f5cbc9e53",
+   "lines": 4
+  }
+ ],
+ "parts/acknowledgements.tex": [
+  {
+   "blob": "c37a92f664151a33d089005921bb1d50113c3440",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": null,
+   "until_commit": null,
+   "norm": "cb6140906ff36f4e",
+   "lines": 3
+  }
+ ],
+ "parts/appendix.tex": [
+  {
+   "blob": "b7e54007ecd57e2e552ea1f8416e63251b71d7a6",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": null,
+   "until_commit": null,
+   "norm": "bf13025345c737ca",
+   "lines": 3
+  }
+ ],
+ "parts/author-contributions.tex": [
+  {
+   "blob": "b208da0b0e7b20a424c837e5e0a42d3431837123",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": "2023-04-30",
+   "until_commit": "4f17267",
+   "removed": true,
+   "norm": "a76665ef9cae7b42",
+   "lines": 23
+  }
+ ],
+ "parts/conclusion.tex": [
+  {
+   "blob": "b0cb3ebfd7c1a0ed9c21818ed91db9f4c5b70f6c",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": "2025-01-11",
+   "until_commit": "431cc52",
+   "norm": "e03b4258c371c9c0",
+   "lines": 3
+  },
+  {
+   "blob": "6bad3d0c9464c5e4e8350ea42b5a1c2877ee4068",
+   "from": "2025-01-11",
+   "from_commit": "431cc52",
+   "subject": "Merge pull request #42 from OpenFOAM-Journal/philipc",
+   "until": "2026-03-31",
+   "until_commit": "cd2b7f2",
+   "norm": "fe66eaba35eca1b3",
+   "lines": 3
+  },
+  {
+   "blob": "5c7d61b22612313055bc4f696041eb3d249c00ee",
+   "from": "2026-03-31",
+   "from_commit": "cd2b7f2",
+   "subject": "Merge pull request #50 from jmnobrega/master",
+   "until": null,
+   "until_commit": null,
+   "norm": "dcb7e4d45c36f040",
+   "lines": 3
+  }
+ ],
+ "parts/introduction.tex": [
+  {
+   "blob": "3c696ea00764d82d1547145e2623d89c6952107f",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": "2025-01-11",
+   "until_commit": "431cc52",
+   "norm": "7d58c657ac112b1f",
+   "lines": 54
+  },
+  {
+   "blob": "f52fb604028b29b0e908fefb7c3832767f9672bc",
+   "from": "2025-01-11",
+   "from_commit": "431cc52",
+   "subject": "Merge pull request #42 from OpenFOAM-Journal/philipc",
+   "until": "2026-03-31",
+   "until_commit": "cd2b7f2",
+   "norm": "cdd9806be5950d86",
+   "lines": 54
+  },
+  {
+   "blob": "84b19180e8ae1178a8776b336c599263dfdc0b87",
+   "from": "2026-03-31",
+   "from_commit": "cd2b7f2",
+   "subject": "Merge pull request #50 from jmnobrega/master",
+   "until": null,
+   "until_commit": null,
+   "norm": "1f7e25971f773227",
+   "lines": 55
+  }
+ ],
+ "parts/section.tex": [
+  {
+   "blob": "135ed31dbd607daf4e759c2371af8ba96ec27fd1",
+   "from": "2023-01-30",
+   "from_commit": "f004fab",
+   "subject": "Merge pull request #26 from MakisH/fix-11",
+   "until": "2025-01-11",
+   "until_commit": "431cc52",
+   "norm": "9a744fb71fb51662",
+   "lines": 11
+  },
+  {
+   "blob": "10417b759bbe443d08644782f463e7a409cb70ee",
+   "from": "2025-01-11",
+   "from_commit": "431cc52",
+   "subject": "Merge pull request #42 from OpenFOAM-Journal/philipc",
+   "until": "2026-03-31",
+   "until_commit": "cd2b7f2",
+   "norm": "ad90e3b664a72f29",
+   "lines": 11
+  },
+  {
+   "blob": "28df09aa51ef1a73375d9f25922909ddf44abcc4",
+   "from": "2026-03-31",
+   "from_commit": "cd2b7f2",
+   "subject": "Merge pull request #50 from jmnobrega/master",
+   "until": null,
+   "until_commit": null,
+   "norm": "d83e7d0eccc67bc5",
+   "lines": 11
+  }
+ ]
+}

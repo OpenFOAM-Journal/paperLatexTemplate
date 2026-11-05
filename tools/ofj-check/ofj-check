@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# Run ofj-check from this folder without installing it.
+# Uses ./.venv if it exists (see docs/INSTALL.md), otherwise python3.
+HERE=$(cd "$(dirname "$0")" && pwd)
+if [ -n "$OFJ_CHECK_PYTHON" ]; then
+    PY=$OFJ_CHECK_PYTHON
+elif [ -x "$HERE/.venv/bin/python" ]; then
+    PY=$HERE/.venv/bin/python
+else
+    PY=python3
+fi
+PYTHONPATH="$HERE/src${PYTHONPATH:+:$PYTHONPATH}" exec "$PY" -m ofjcheck "$@"

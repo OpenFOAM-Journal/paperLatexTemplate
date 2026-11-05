@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ofj-template-check"
+version = "0.1.0"
+description = "Checks whether a submission to the OpenFOAM Journal was prepared with the current LaTeX template"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pdfplumber>=0.10"]
+
+[project.scripts]
+ofj-check = "ofjcheck.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
